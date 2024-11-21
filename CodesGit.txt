@@ -1,4 +1,4 @@
-1-  git clone https://github.com/TiagoSBittencourt/UniBrain.git.
+1-  git clone https://github.com/TiagoSBittencourt/UniBrain.git .
 
 2-  git branch (listando branchs)
 
@@ -13,3 +13,9 @@
 7-  git push (colocando a caixa no caminhaão e mandando embora)
 
 8-  git fetch -a (Busco novas branchs no github)
+
+
+asdghbaifugaefiug 
+
+
+ss

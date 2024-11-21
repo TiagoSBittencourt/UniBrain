@@ -1,3 +1,15 @@
 1-  git clone https://github.com/TiagoSBittencourt/UniBrain.git.
-2-  git add . (Adicionando na caixa)
-3-  git commit -m "Etiqueta"(Fechando a caixa e escrevendo em cima da fita)
+
+2-  git branch (listando branchs)
+
+3-  git branch #nome da branch# (Eu crio outra branch)
+
+4-  git checkout #nome da branch# (Eu mudo de branch)
+
+5-  git add . (Adicionando na caixa)
+
+6-  git commit -m "Etiqueta"(Fechando a caixa e escrevendo em cima da fita)  
+
+7-  git push (colocando a caixa no caminhaão e mandando embora)
+
+8-  git fetch -a (Busco novas branchs no github)

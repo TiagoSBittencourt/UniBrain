@@ -1,20 +1,34 @@
 1-  git clone https://github.com/TiagoSBittencourt/UniBrain.git .
 
-2-  git branch (listando branchs)
 
-3-  git branch #nome da branch# (Eu crio outra branch)
+2-  git branch                                (listando branchs)
 
-4-  git checkout #nome da branch# (Eu mudo de branch)
 
-5-  git add . (Adicionando na caixa)
+3-  git branch #nome da branch#               (Eu crio outra branch)
 
-6-  git commit -m "Etiqueta"(Fechando a caixa e escrevendo em cima da fita)  
 
-7-  git push (colocando a caixa no caminhaão e mandando embora)
+4-  git checkout #nome da branch#             (Eu mudo de branch)
 
-8-  git fetch -a (Busco novas branchs no github)
 
-9-  git pull
+5-  git add .                                 (Adicionando na caixa)
 
-asdghbaifugaefiug 
 
+6-  git commit -m "Etiqueta"                  (Fechando a caixa e escrevendo em cima da fita)  
+
+
+7-  git push                                  (colocando a caixa no caminhaão e mandando embora)
+
+
+8-  git fetch -a                              (Busco novas branchs no github)
+
+
+9-  git pull                                  (Puxando alterações do git)
+
+
+10- git status                                (Me da um feedback de como estar meus arquivos)
+
+
+11- git checkout #nome do arquivo#            (Volta ao estado original do arquivo (como esta no github) )
+
+
+12- git merge #nome da branch#                (Faz a junção de duas branchs)

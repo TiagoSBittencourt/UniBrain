@@ -1,0 +1,7 @@
+git add .                     (colocando na caixa)
+
+git commit -m "Etiqueta"      (passando fita na caixa e rotulando)
+
+git push                      (enviando as as atualizações pro git hub)
+
+git status                    (feedback)

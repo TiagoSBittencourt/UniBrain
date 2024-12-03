@@ -1,0 +1,11 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-color: #062ac9; 
+  --secondary-color: #007c42; 
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,49 @@
+.loginBackground{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(12,32,105);
+  background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
+}
+
+.loginBox{
+  background-color: rgb(228, 231, 228);
+  padding: 20px;
+  min-width: 300px;
+  height: 70%;
+  width: 30%;
+  border: 1px solid gray;
+}
+
+.itemBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+
+.loginTitle{
+  font-size: 30px;
+  color: black;
+}
+
+.field-Outline{
+  width: 85%;
+}
+
+.loginButton{
+  width: 85%;
+}
+
+.loginButton{
+  background: rgb(12,32,105);
+  background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
+}
+
+.checkBox{
+  display: flex;
+  align-items: center;
+}

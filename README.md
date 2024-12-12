@@ -1,51 +1,8 @@
-# 📚 Project: **UniBrain**
+# React + Vite
 
-## 🚀 Central Idea
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-**UniBrain** is an interactive educational platform designed to offer **learning paths for university students**. The platform focuses on improving content retention through dynamic quizzes, practical exercises, and instant feedback.
+Currently, two official plugins are available:
 
----
-
-## 🎯 Project Objectives
-
-1. **Provide Personalized Learning Paths**: Offer specific modules for university disciplines.
-2. **Scalable Backend** with Django.
-3. **Simple and Responsive Interface** with quizzes and feedback.
-4. **Database Management** using PostgreSQL.
-5. **Deploy and Scale with AWS** for continuous service.
-
----
-
-## 🛠️ Technologies Used
-
-| Technology | Function               |
-| ---------- | ---------------------- |
-| Django     | Backend & API          |
-| PostgreSQL | Relational Database    |
-| JavaScript | Frontend Interactivity |
-| HTML/CSS   | Structure & Styling    |
-| AWS        | Deployment & Scaling   |
-
----
-
-## 🚧 Project Status
-
-- 🔄 **In Development**: Currently structuring learning paths and integrating front and back end.
-
----
-
-## 🤝 Contributions
-
-Contributions are welcome! Please follow the steps:
-
-1. Fork the repository.
-2. Create a branch: `git checkout -b my-feature`.
-3. Commit your changes: `git commit -m 'Added a feature'`.
-4. Push the branch: `git push origin my-feature`.
-5. Open a pull request and describe your contribution.
-
----
-
-## 📧 Contact
-
-- **Tiago Bittencourt (Project Lead)**: [tiago.bittencourt.2005@gmail.com](mailto:tiago.bittencourt.2005@gmail.com)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

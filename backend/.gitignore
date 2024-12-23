@@ -1,0 +1,31 @@
+# Python
+*.pyc
+*.pyo
+__pycache__
+
+# Django
+db.sqlite3
+*.log
+
+# Dependências
+venv/
+.env/
+*.egg-info
+*.dist-info
+
+# Configuração local
+*.local
+*.env
+
+# Arquivos de compilação
+*.o
+*.a
+*.so
+
+# IDEs e editores
+.vscode/
+.idea/
+
+# Outros
+*.swp
+.DS_Store

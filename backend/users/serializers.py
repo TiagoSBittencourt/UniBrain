@@ -4,6 +4,16 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model() # Reference the defined User Structure in models.py
 
+class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField()
+
+    def to_representation(self, instance):
+        ret = super().to_representation(instance)
+        ret.pop('password', None) # password is not visible
+        return ret 
+
+
 class RegisterSerializers(serializers.ModelSerializer):
     class Meta:
         model = User

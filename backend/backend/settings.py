@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'users'
+    'users',
+    'knox',
 ]
 
 MIDDLEWARE = [
@@ -43,6 +44,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'knox.auth.TokenAuthentication',
+    ],
+}
+
+AUTHENTICATION_BACKENDS = [
+    'users.auth_backend.EmailAuthBackend' # may delete this, for email auth besides user
+]
 # To allow request from frontend
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173'

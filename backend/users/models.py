@@ -28,8 +28,8 @@ class AuthUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)  # Required by Django's auth system
     is_staff = models.BooleanField(default=False)  # Required for admin permissions
 
-    USERNAME_FIELD = "username"
-    REQUIRED_FIELDS = ["email"]  # Username and password is alredy required as default
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username"]  # Username and password is alredy required as default
 
     objects = CustomUserManager() # Verify and handle the user creation
 

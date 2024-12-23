@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import *
+from django.contrib.auth.admin import UserAdmin
+from .models import AuthUser
 
-# Register your models here.
-admin.site.register(AuthUser)
+# Chatgpt (Review)
+class CustomUserAdmin(UserAdmin):
+    model = AuthUser
+    list_display = ['email', 'username', 'is_staff', 'is_active']
+    search_fields = ['email', 'username']
+    ordering = ['email']
+
+admin.site.register(AuthUser, CustomUserAdmin)

@@ -8,9 +8,9 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import '../../../App.css';
 
-export default function PassField_Outline(props) {
+export default function PassField(props) {
   const [showPassword, setShowPassword] = React.useState(false);
-  const {label} = props
+  const { label, fullWidth, required, ...otherProps } = props;
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -23,7 +23,7 @@ export default function PassField_Outline(props) {
   };
 
   return (
-        <FormControl variant="outlined" className={"field-Outline"}>
+        <FormControl variant="outlined" className={"field-Outline"} fullWidth={fullWidth}>
           <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
@@ -44,6 +44,8 @@ export default function PassField_Outline(props) {
               </InputAdornment>
             }
             label={label}
+            required={required} 
+            {...otherProps} 
           />
         </FormControl>
   );

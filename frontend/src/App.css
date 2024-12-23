@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .loginBackground{
   width: 100vw;
   height: 100vh;
@@ -23,6 +29,12 @@
   align-items: center;
   width: 100%;
   height: 100px;
+}
+
+.checkBox{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .loginTitle{

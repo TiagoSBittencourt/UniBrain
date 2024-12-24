@@ -8,11 +8,14 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { FormHelperText } from '@mui/material';
 import { Controller } from 'react-hook-form';
+import { v4 as uuidv4 } from "uuid";
 import '../../../App.css';
 
 export default function CustomPassField(props) {
   const [showPassword, setShowPassword] = React.useState(false);
   const { label, name, control, fullWidth, required, mt = 0, mb = 0 } = props;
+
+  const uniqueId = uuidv4();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -25,28 +28,33 @@ export default function CustomPassField(props) {
   };
 
   return (
-
-        <Controller 
-        name = {name}
-        control = {control}
-        render = {({
-            field:{onChange, value},
-            fieldState: {error},
-            formState, 
-        }) => (
-          <FormControl sx={{ mt, mb }} variant="outlined" className={"field-Outline"} fullWidth={fullWidth}>
-          <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
+    <Controller
+      name={name}
+      control={control}
+      defaultValue=""
+      render={({
+        field: { onChange, value },
+        fieldState: { error },
+        formState,
+      }) => (
+        <FormControl
+          sx={{ mt, mb }}
+          variant="outlined"
+          className={"field-Outline"}
+          fullWidth={fullWidth}
+        >
+          <InputLabel htmlFor={uniqueId}>{label}</InputLabel>
           <OutlinedInput
-            id="outlined-adornment-password"
+            id={uniqueId}
             onChange={onChange}
             value={value}
             error={!!error}
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
                   aria-label={
-                    showPassword ? 'hide the password' : 'display the password'
+                    showPassword ? "hide the password" : "display the password"
                   }
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
@@ -58,17 +66,14 @@ export default function CustomPassField(props) {
               </InputAdornment>
             }
             label={label}
-            required={required} 
-
+            required={required}
           />
 
-        <FormHelperText sx={{color: "#d32f2f"}}>
-          {error?.message}
-        </FormHelperText>
+          <FormHelperText sx={{ color: "#d32f2f" }}>
+            {error?.message}
+          </FormHelperText>
         </FormControl>
-            )
-        } 
-
-        />
+      )}
+    />
   );
 }

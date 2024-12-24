@@ -10,7 +10,7 @@ import {
   } from "@mui/material";
   import CustomTextField from "./Forms/text_fields/CustomTextField";
   import CustomPassField from "./Forms/text_fields/CustomPassField";
-  import LoginButton from "./Forms/Buttons/LoginButton";
+  import CustomButton from "./Forms/Buttons/CustomButton";
   import { Link as RouterLink } from "react-router-dom";
   import {useForm} from 'react-hook-form';
   import AxiosInstance from "./AxiosInstance";
@@ -28,10 +28,10 @@ import {
                 email: data.email,
                 password: data.password,
         }).then(() => {
-            navigate(`/`)
+            navigate(`/login`)
         })
         .catch((error) => {
-            console.error("Erro ocorreu", error);
+            console.error("Erro ocorreu", error)
         });
     }
 
@@ -74,6 +74,7 @@ import {
                         label="Senha"
                         name="password"
                         mt = {2}
+                        mb = {2}
                         control={control}
                         fullWidth
                         required 
@@ -82,7 +83,7 @@ import {
                         control={<Checkbox value="Lembre-se" color="primary" />}
                         label="Lembre de mim"
                     /> */}
-                    <LoginButton
+                    <CustomButton
                         label="Registre-se"
                         type="submit"
                     />

@@ -1,42 +1,56 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.loginBackground{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loginBox{
+  background-color: rgb(228, 231, 228);
+  padding: 20px;
+  min-width: 300px;
+  height: 70%;
+  width: 30%;
+  border: 1px solid gray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.itemBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
 }
 
-.card {
-  padding: 2em;
+.checkBox{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+.loginTitle{
+  font-size: 30px;
+  color: black;
+}
+
+.field-Outline{
+  width: 85%;
+}
+
+.authButton{
+  width: 100%;
+  background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
+}
+
+.checkBox{
+  display: flex;
+  align-items: center;
 }

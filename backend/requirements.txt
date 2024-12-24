@@ -1,0 +1,12 @@
+Django
+djangorestframework
+django-cors-headers
+django-rest-knox
+dynaconf
+hvac
+loguru
+requests
+shortuuid
+sqlparse
+tzdata
+validators

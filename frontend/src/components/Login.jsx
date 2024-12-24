@@ -11,7 +11,8 @@ import {
     Grid2,
     Link,
   } from "@mui/material";
-  import PassField from "./Forms/text_fields/PassField";
+  import CustomPassField from "./Forms/text_fields/CustomPassField";
+  import CustomTextField from "./Forms/text_fields/CustomTextField";
   import { Link as RouterLink } from "react-router-dom";
   
   const Login = () => {
@@ -33,16 +34,18 @@ import {
           <Typography component="h1" variant="h5" sx={{ textAlign: "center" }}>
             Login
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 2 }}>
-            <TextField
-              placeholder="Email"
+          <Box sx={{ mt: 2 }}>
+            <CustomTextField
+              label="Email"
+              name="email"
+              mt = {2}
               fullWidth
               required
-              autoFocus
-              sx={{ mb: 2 }}
             />
-            <PassField
+            <CustomPassField
                 label="Senha"
+                name="password"
+                mt = {2}
                 fullWidth
                 required
             />
@@ -50,9 +53,10 @@ import {
               control={<Checkbox value="Lembre-se" color="primary" />}
               label="Lembre de mim"
             />
-            <Button type="submit" variant="contained" fullWidth sx={{ mt: 1 }} className="loginButton">
-              Login
-            </Button>
+            <LoginButton
+                label={"Registre-se"}
+                type="submit"
+            />
           </Box>
           <Grid2 container justifyContent="space-between" sx={{ mt: 2 }}>
             <Grid2 item>

@@ -6,11 +6,13 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { FormHelperText } from '@mui/material';
+import { Controller } from 'react-hook-form';
 import '../../../App.css';
 
-export default function PassField(props) {
+export default function CustomPassField(props) {
   const [showPassword, setShowPassword] = React.useState(false);
-  const { label, fullWidth, required, ...otherProps } = props;
+  const { label, name, control, fullWidth, required, mt = 0, mb = 0 } = props;
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -23,10 +25,22 @@ export default function PassField(props) {
   };
 
   return (
-        <FormControl variant="outlined" className={"field-Outline"} fullWidth={fullWidth}>
+
+        <Controller 
+        name = {name}
+        control = {control}
+        render = {({
+            field:{onChange, value},
+            fieldState: {error},
+            formState, 
+        }) => (
+          <FormControl sx={{ mt, mb }} variant="outlined" className={"field-Outline"} fullWidth={fullWidth}>
           <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
+            onChange={onChange}
+            value={value}
+            error={!!error}
             type={showPassword ? 'text' : 'password'}
             endAdornment={
               <InputAdornment position="end">
@@ -45,8 +59,16 @@ export default function PassField(props) {
             }
             label={label}
             required={required} 
-            {...otherProps} 
+
           />
+
+        <FormHelperText sx={{color: "#d32f2f"}}>
+          {error?.message}
+        </FormHelperText>
         </FormControl>
+            )
+        } 
+
+        />
   );
 }

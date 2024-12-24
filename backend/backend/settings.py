@@ -47,11 +47,13 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'knox.auth.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ],
 }
 
 AUTHENTICATION_BACKENDS = [
-    'users.auth_backend.EmailAuthBackend' # may delete this, for email auth besides user
+    'users.auth_backend.EmailAuthBackend', # may delete this, for email auth besides user
+    'django.contrib.auth.backends.ModelBackend',
 ]
 # To allow request from frontend
 CORS_ALLOWED_ORIGINS = [

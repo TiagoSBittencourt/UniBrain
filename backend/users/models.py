@@ -8,7 +8,10 @@ class CustomUserManager(BaseUserManager):
             raise ValueError("The Email field is required")
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
-        user.set_password(password)
+        if password:
+            user.set_password(password)  # Garante que a senha seja criptografada
+        else:
+            raise ValueError("Password cannot be None")
         user.save(using=self._db)
         return user
 
@@ -20,16 +23,14 @@ class CustomUserManager(BaseUserManager):
 
 
 class AuthUser(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(max_length=200, unique=True)
+    username = models.CharField(max_length=200)
     email = models.EmailField(max_length=200, unique=True)
-    birthday = models.DateField(null=True, blank=True)
-    degree = models.CharField(max_length=100, null=True, blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)  # Required by Django's auth system
     is_staff = models.BooleanField(default=False)  # Required for admin permissions
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["username"]  # Username and password is alredy required as default
+    REQUIRED_FIELDS = []  # Username and password is alredy required as default
 
     objects = CustomUserManager() # Verify and handle the user creation
 

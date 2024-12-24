@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(12,32,105);
   background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
 }
 
@@ -46,12 +45,8 @@
   width: 85%;
 }
 
-.loginButton{
-  width: 85%;
-}
-
-.loginButton{
-  background: rgb(12,32,105);
+.authButton{
+  width: 100%;
   background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
 }
 

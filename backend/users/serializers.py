@@ -17,7 +17,7 @@ class LoginSerializer(serializers.Serializer):
 class RegisterSerializers(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'email', 'password', 'username')
+        fields = ('id', 'username', 'email', 'password')
         extra_kwargs = {'password': {'write_only':True}} # Limit to only write (do not see password using GET/POST)
 
     # Hashed password

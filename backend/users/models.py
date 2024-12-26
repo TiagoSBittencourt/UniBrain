@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.contrib.auth.base_user import BaseUserManager
 
 # Password reset -> email validation
-from django_rest_passwordreset.signals import reset_password_token_created
+from django_rest_passwordreset.signals import reset_password_token_created # type: ignore
 from django.dispatch import receiver
 from django.urls import reverse
 from django.template.loader import render_to_string
@@ -49,8 +49,8 @@ class AuthUser(AbstractBaseUser, PermissionsMixin):
 @receiver(reset_password_token_created)
 def password_reset_token_created(reset_password_token, *args, **kwargs):
     sitelink = "http://localhost:5173/"
-    token = "?token={}".format(reset_password_token.key) # Send the new token via url to the frontend
-    full_link = str(sitelink)+str("password-reset")+str(token)
+    token = "{}".format(reset_password_token.key) # Send the new token via url to the frontend
+    full_link = str(sitelink)+str("password-reset/")+str(token)
 
     print(full_link)
     print(token)

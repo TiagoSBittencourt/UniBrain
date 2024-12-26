@@ -36,6 +36,9 @@ const PassReset = () =>{
         })
         .then((response) => {
             setShowMessage(true)
+            setTimeout(() => {
+              setShowMessage(false)
+            }, 5000 )
         })
         .catch((error) => {
             console.error("Erro during reset", error);

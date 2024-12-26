@@ -2,6 +2,14 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin 
 from django.contrib.auth.base_user import BaseUserManager
 
+# Password reset -> email validation
+from django_rest_passwordreset.signals import reset_password_token_created # type: ignore
+from django.dispatch import receiver
+from django.urls import reverse
+from django.template.loader import render_to_string
+from django.core.mail import EmailMultiAlternatives
+from django.utils.html import strip_tags
+
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
@@ -36,3 +44,32 @@ class AuthUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username
+
+
+@receiver(reset_password_token_created)
+def password_reset_token_created(reset_password_token, *args, **kwargs):
+    sitelink = "http://localhost:5173/"
+    token = "{}".format(reset_password_token.key) # Send the new token via url to the frontend
+    full_link = str(sitelink)+str("password-reset/")+str(token)
+
+    print(full_link)
+    print(token)
+
+    # Pass to html more easy
+    context = {
+        "full_link": full_link
+    }
+
+    html_message = render_to_string("backend/email.html", context=context)
+
+    plain_message = strip_tags(html_message) # Remove html tags
+
+    msg = EmailMultiAlternatives(
+        subject="Trocar Senha - UniBrain",
+        body=plain_message,
+        from_email = "suporteunibrain@gmail.com",
+        to = [reset_password_token.user.email]
+    )
+
+    msg.attach_alternative(html_message, "text/html")
+    msg.send()

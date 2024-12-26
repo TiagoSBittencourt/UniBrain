@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Home from './components/Home'
+import About from './components/About'
 import Register from './components/Register'
 import Login from './components/Login'
 import PassResetRequest from './components/PassResetRequest'
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<About/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>

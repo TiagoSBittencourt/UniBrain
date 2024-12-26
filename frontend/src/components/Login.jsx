@@ -34,10 +34,10 @@ const Login = () => {
     const emailForm = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ // Regex para verificar o formato do email
     if (!emailForm.test(data.email)) {
       setShowMessage(true)
-      setErrorMessage("Email inválido. Tente novamente.")
+      setErrorMessage("Email inválido")
       setTimeout(() => {
         setShowMessage(false)
-      }, 100000)
+      }, 5000)
       return
     }
   
@@ -52,11 +52,11 @@ const Login = () => {
       })
       .catch((error) => {
         console.error("Erro durante o login", error)
-        setErrorMessage("Email ou senha incorretos. Tente novamente.")
+        setErrorMessage("Email ou senha incorretos")
         setShowMessage(true)
         setTimeout(() => {
           setShowMessage(false)
-        }, 100000)
+        }, 5000)
       })
   }
 

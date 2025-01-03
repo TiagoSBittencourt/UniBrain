@@ -1,0 +1,236 @@
+.container{
+    align-items: center;
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 10px;
+    padding: 40px 50px;
+  }
+  
+  .introducao{
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .bemVindo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+    align-items: center;
+    width: 600px;
+    margin: auto;
+    margin-top: 0px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 10px;
+    padding: 40px 50px;
+  }
+  
+  .logoSite{
+    align-items: center;
+    width: 350px;
+    height: 350px;
+  }
+  
+  .botao{
+    margin-top: 10px;
+    align-items: center;
+    background-attachment: scroll;
+    background-color: rgb(0, 0, 0);
+    background-size: auto;
+    border-bottom-color: rgb (117, 117, 117);
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-left-color: rgb(117,117,117);
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-right-color: rgb(117,117,117);
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: rgb(117,117,117);
+    box-shadow: rgb(117, 117, 117) 0px 2px 0px 0px;
+    box-sizing: border-box;
+    column-gap: 8px;
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    font-kerning: auto;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    height: 64px;
+    width: 476px;
+    justify-content: center;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-align: center;
+    text-decoration-color: white;
+    color: white;
+  }
+  
+  .seta-voltar {
+    position: absolute; 
+    top: 40px;          
+    left: 40px;
+    width: 24px;
+    height: 24px;         
+    font-size: 50px;    
+    color: black;       
+    cursor: pointer;    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .seta-voltar:hover {
+    color: rgb(56, 56, 56); 
+  }
+  
+  .botao.botao-continuar {
+    width: 150px;
+    font-size: 22px;
+    align-items: center;
+  }
+  
+  .container-BemVindo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .tituloPergunta{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .tituloEscolhaMateria{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 90px;
+    margin-bottom: 50px;
+  }
+  
+  .escolha-materia {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .materiaDiv {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 750px;
+    gap: 20px;
+    background-color: rgb(249, 249, 249);
+    cursor: pointer;
+  }
+  
+  .materia-imagem {
+    width: 100px;
+    height: 100px;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius: 8px; 
+  }
+  
+  .materia-descricao {
+    text-align: left;
+  }
+  
+  .materia-titulo {
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: -20px;
+  }
+  
+  .materia-paragrafo {
+    margin: 5px 0 0 0;
+    font-size: 17px;
+    color: rgb(85, 85, 85);
+  }
+  
+  .materia-click {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid rgb(204, 204, 204);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    background-color: rgb(249, 249, 249);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 90px;
+  }
+  
+  .nivelamento {
+    margin-top: 20px;
+    padding: 10px;
+    width: 80%;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .paragrafoNivelamento {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .botao-iniciarMateria {
+    align-items: center;
+    margin-left: 60px;
+    margin-right: 30px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: rgb(0, 123, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .botao-iniciarMateria:hover {
+    background-color: rgb(0, 86, 200);
+  }
+  
+  .fechar-materia {
+    position: absolute;
+    top: 40px; 
+    right: 40px; 
+    width: 24px;
+    height: 24px;
+    font-size: 50px;
+    background: none; 
+    color: black; 
+    border: none;  
+    font-weight: bold; 
+    cursor: pointer;    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .fechar-materia:hover {
+    color: rgb(56, 56, 56); 
+  }

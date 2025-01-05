@@ -1,0 +1,29 @@
+.colorText {
+    color: #09245e; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;
+}
+
+.title {
+    color: #000000;
+    font-size: 3.5rem;
+    margin-right: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;       
+    line-height: 1;         
+    
+}
+
+.imagem {
+    width: 80%; 
+    max-width: 400px; 
+    height: auto; 
+    
+}

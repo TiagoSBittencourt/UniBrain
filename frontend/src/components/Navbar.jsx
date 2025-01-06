@@ -1,10 +1,40 @@
+import React, {useState} from 'react'
+import Logo from '../assets/UniBrain_Logo.png'
+import {Link} from "react-router-dom"
+import ReorderIcon from '@mui/icons-material/Reorder';
+import "./Navbar.css"
 
-const Navbar = () =>{
+function Navbar(){
+
+    const [openLinks, setOpenLinks] = useState(false)
+
+    // Bugged
+    //const toggleNavbar = () => {
+    //    setOpenLinks(!openLinks)
+    //}
+
     return (
-        <div>
-            This Is The NAVBAR
+        <div className='navbar'>
+            <div className="leftSide" id={openLinks ? "open" : "close"}>
+            <Link to="/"> 
+                <img draggable="false" src={Logo} />
+            </Link>
+             <div className='hiddenLinks'>
+                <Link to="/"> Trilhas</Link>
+                <Link to="/login"> Login</Link>
+                <Link to="/register"> Registrar</Link> 
+             </div>
+            </div>
+            <div className="rightSide">
+            <Link to="/"> Trilhas</Link>
+            <Link to="/login"> Login</Link>
+            <Link to="/register"> Registrar</Link>
+            <button>
+            <ReorderIcon />
+            </button>
+            </div>
         </div>
     )
 }
 
-export default Navbar
+export default Navbar;

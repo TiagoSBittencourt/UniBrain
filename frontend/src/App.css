@@ -1,16 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 .loginBackground{
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
   justify-content: center;
-  background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
+  background-image: linear-gradient(#09642c, #004384);
 }
 
 .loginBox{
@@ -48,18 +45,6 @@
 .authButton{
   width: 100%;
   background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
-}
-
-.checkBox{
-  display: flex;
-  align-items: center;
-}
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .logo {

@@ -1,13 +1,12 @@
-import { useState } from 'react'
+import './index.css'
 import './App.css'
-import Home from './components/Home'
-import About from './components/About'
-import Register from './components/Register'
-import Login from './components/Login'
-import PassResetRequest from './components/PassResetRequest'
-import PassReset from './components/PassReset'
-import Quiz from './components/Quiz'
-import C2 from './components/TrilhaC2'
+import Home from './components/Home/Home'
+import Register from './components/Authentication/Register'
+import Login from './components/Authentication/Login'
+import PassResetRequest from './components/Authentication/PassResetRequest'
+import PassReset from './components/Authentication/PassReset'
+import Quiz from './components/Quiz/Quiz'
+import C2 from './components/Trilhas/TrilhaC2'
 import {Routes, Route} from 'react-router-dom'
 
 
@@ -16,8 +15,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<About/>}/>
-        <Route path="/home" element={<Home/>}/>
+        <Route exact path='/' element={<Home />} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/bem-vindo" element={<Quiz/>}/>

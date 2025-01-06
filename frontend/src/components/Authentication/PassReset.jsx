@@ -11,13 +11,13 @@ import {
     Link,
   } from "@mui/material";
 import {React, useState} from "react";
-import CustomPassField from "./Forms/text_fields/CustomPassField";
-import CustomButton from "./Forms/Buttons/CustomButton";
-import CustomAlert from "./micro_components/CustomAlert";
+import CustomPassField from "../Forms/TextFields/CustomPassField";
+import CustomButton from "../Forms/Buttons/CustomButton";
+import CustomAlert from "../PopUps/CustomAlert";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import AxiosInstance from "./AxiosInstance";
+import AxiosInstance from "../AxiosInstance";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
 

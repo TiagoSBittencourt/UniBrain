@@ -8,12 +8,12 @@ import {
     Checkbox,
     Link,
   } from "@mui/material";
-  import CustomTextField from "./Forms/text_fields/CustomTextField";
-  import CustomPassField from "./Forms/text_fields/CustomPassField";
-  import CustomButton from "./Forms/Buttons/CustomButton";
+  import CustomTextField from "../Forms/TextFields/CustomTextField";
+  import CustomPassField from "../Forms/TextFields/CustomPassField";
+  import CustomButton from "../Forms/Buttons/CustomButton";
   import { Link as RouterLink } from "react-router-dom";
   import { useForm } from "react-hook-form";
-  import AxiosInstance from "./AxiosInstance";
+  import AxiosInstance from "../AxiosInstance";
   import { useNavigate } from "react-router-dom";
   import {yupResolver} from "@hookform/resolvers/yup";
   import * as yup from "yup";

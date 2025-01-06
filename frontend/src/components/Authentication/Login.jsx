@@ -8,14 +8,14 @@ import {
   Link,
 } from "@mui/material"
 import { React, useState } from "react"
-import CustomPassField from "./Forms/text_fields/CustomPassField"
-import CustomTextField from "./Forms/text_fields/CustomTextField"
-import CustomButton from "./Forms/Buttons/CustomButton"
-import CustomAlert from "./micro_components/CustomAlert" 
+import CustomPassField from "../Forms/TextFields/CustomPassField"
+import CustomTextField from "../Forms/TextFields/CustomTextField"
+import CustomButton from "../Forms/Buttons/CustomButton"
+import CustomAlert from "../PopUps/CustomAlert" 
 import { Link as RouterLink } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
-import AxiosInstance from "./AxiosInstance"
+import AxiosInstance from "../AxiosInstance"
 
 const Login = () => {
   const { handleSubmit, control } = useForm()
@@ -47,7 +47,7 @@ const Login = () => {
     })
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
-          navigate(`/home`)
+          navigate(`/c2`)
         }
       })
       .catch((error) => {

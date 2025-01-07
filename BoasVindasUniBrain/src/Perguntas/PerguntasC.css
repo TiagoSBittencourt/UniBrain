@@ -3,7 +3,7 @@
   width: 500px;
   margin: auto;
   margin-top: 30px;
-  color: black;
+  color: #e7e7e7;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -23,7 +23,7 @@
   width: 600px;
   margin: auto;
   margin-top: 0px;
-  color: black;
+  color: #e7e7e7;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -85,13 +85,13 @@
   width: 24px;
   height: 24px;         
   font-size: 50px;    
-  color: black;       
+  color: rgb(167, 167, 167);       
   cursor: pointer;    
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .seta-voltar:hover {
-  color: rgb(56, 56, 56); 
+  color: rgb(255, 255, 255); 
 }
 
 .botao.botao-continuar {
@@ -224,7 +224,7 @@
   height: 24px;
   font-size: 50px;
   background: none; 
-  color: black; 
+  color: rgb(148, 148, 148); 
   border: none;  
   font-weight: bold; 
   cursor: pointer;    

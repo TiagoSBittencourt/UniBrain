@@ -5,6 +5,8 @@ from .serializers import *
 from .models import *
 from django.contrib.auth import get_user_model, authenticate
 from knox.models import AuthToken
+from django.views.generic.edit import CreateView, UpdateView
+from django.urls import reverse_lazy
 
 
 User = get_user_model() # Reference the defined User Structure in models.py
@@ -48,3 +50,29 @@ class RegisterViewSet(viewsets.ViewSet):
             return Response(serializer.data, status=201) # Not include the pass info by default as defined in serializer (write_only)
         else:
             return Response(serializer.errors, status=400)
+        
+
+
+
+
+
+#Editar os dados do perfil do usuário 
+
+
+class PerfilUpdate(UpdateView):
+    template_name = "cadastros/form.html"
+    model = Perfil
+    fields = ["nome_completo","cpf","telefone"]
+    success_url = reverse_lazy("index")
+
+    def get_object(self, queryset = None):
+        self.object = get_object_or_404(Perfil, usuario=self.request.user)
+        return self.object
+    
+    def get_context_data(self,*args,**kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        
+        context["titulo"] = "Meus dados pessoais"
+        context["botao"] = "Atualizar"
+
+        return context

@@ -4,6 +4,10 @@ import "./Home.css"
 import Baixo from './baixo'
 import CardHome from './Cardhome'
 import Navbar from '../Navbar'
+import MateriasDiv from './MateriasDiv'
+
+
+
 
 
 function Home(){
@@ -13,7 +17,9 @@ function Home(){
                 <Navbar/>
                 <Header/>
                 <CardHome/>
+                <MateriasDiv/>
                 <Baixo/>
+            
             </div>
         </div>
     )

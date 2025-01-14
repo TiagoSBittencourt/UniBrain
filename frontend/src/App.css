@@ -82,3 +82,28 @@
 .read-the-docs {
   color: #888;
 }
+
+@font-face {
+  font-family: FiraSansBlack;
+  src: url(/public/assets/FiraSans-Black.ttf);
+}
+
+@font-face {
+  font-family: FiraSansBold;
+  src: url(/public/assets/FiraSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: FiraSansRegular;
+  src: url(/public/assets/FiraSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: Din-Round;
+  src: url(/public/assets/din-round-bold.ttf);
+}
+
+@font-face {
+  font-family: MPLUsRounded1;
+  src: url(/public/assets/MPLUSRounded1c-Bold.ttf);
+}

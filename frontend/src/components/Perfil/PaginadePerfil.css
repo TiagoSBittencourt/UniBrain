@@ -1,0 +1,58 @@
+.containerperfil {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100vh;           
+    margin: 0;                
+}
+
+.boxperfil {
+    width: 1500px;
+    height: 800px;
+    background-color: #4f4848;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.infoPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+   
+  }
+  
+  
+  .UserPerfil {
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  
+  .EmailPerfil {
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  
+  .SenhaPerfil {
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+  .ButtonPerfil {
+    position: fixed;
+    left: 1200px;
+    top: 200px;
+    z-index: 1000;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+ 
+  

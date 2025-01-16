@@ -29,6 +29,7 @@ function Navbar(){
             <Link to="/"> Trilhas</Link>
             <Link to="/login"> Login</Link>
             <Link to="/register"> Registrar</Link>
+            <Link to="/perfil"> perfil </Link>
             <button>
             <ReorderIcon />
             </button>

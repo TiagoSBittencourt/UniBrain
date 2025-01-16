@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Header.css"
-import Logo from '../../assets/UniBrain_Logo.jpg'
+import Logo from '/assets/UniBrain_Logo.png'
 
 export default function Header() {
     

@@ -7,6 +7,8 @@ import PassResetRequest from './components/Authentication/PassResetRequest'
 import PassReset from './components/Authentication/PassReset'
 import Quiz from './components/Quiz/Quiz'
 import C2 from './components/Trilhas/TrilhaC2'
+import Perfil from './components/Perfil/PaginadePerfil'
+import EditInfoPerfil from './components/Perfil/EditarInfoPerfil'
 import {Routes, Route} from 'react-router-dom'
 
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/request/password-reset" element={<PassResetRequest/>}/>
         <Route path="/password-reset/:token" element={<PassReset/>}/>
         <Route path="/c2" element={<C2/>}/>
+        <Route path="/perfil" element={<Perfil/>}/>
+        <Route path="/editar-perfil" element={<EditInfoPerfil/>}/>
       </Routes>
 
     </>

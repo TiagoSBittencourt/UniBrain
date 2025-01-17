@@ -9,5 +9,5 @@ router.register('register', RegisterViewSet, basename='register')
 router.register('login', LoginViewSet, basename='login')
 urlpatterns = router.urls
 urlpatterns = [
-path('atualizer-dados',UserUpdate.as_view(), name='atualizar-dados'),
+path('atualizar-dados',UserUpdate.as_view(), name='atualizar-dados'),
     ]

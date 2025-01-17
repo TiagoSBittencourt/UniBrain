@@ -59,14 +59,14 @@ class RegisterViewSet(viewsets.ViewSet):
 #Editar os dados do perfil do usuário 
 
 
-class PerfilUpdate(UpdateView):
+class UserUpdate(UpdateView):
     template_name = "cadastros/form.html"
-    model = Perfil
+    model = User
     fields = ["nome_completo","cpf","telefone"]
     success_url = reverse_lazy("index")
 
     def get_object(self, queryset = None):
-        self.object = get_object_or_404(Perfil, usuario=self.request.user)
+        self.object = get_object_or_404(User, usuario=self.request.user)
         return self.object
     
     def get_context_data(self,*args,**kwargs):

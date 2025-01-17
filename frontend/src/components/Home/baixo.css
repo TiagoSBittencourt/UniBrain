@@ -1,0 +1,29 @@
+.baixo {
+    display: flex;              
+    justify-content: center;    
+    align-items: center;        
+    height: 100vh;              
+    background-color: rgb(27, 27, 141);
+  }
+  
+  .textobaixo {
+    text-align: center;        
+    font-size: 50px;           
+    font-weight: bold;    
+    font-family: FiraSansBold;  
+    color: aliceblue;
+    display: flex;             
+    flex-direction: column;    
+    justify-content: center;   
+    align-items: center;       
+    gap: 20px;
+  }
+
+  .nomebrain {
+    color: rgb(17, 101, 41);
+  }
+
+  .button {
+    margin-top: 20px;  
+  }
+    

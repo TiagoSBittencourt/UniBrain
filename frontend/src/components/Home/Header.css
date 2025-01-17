@@ -1,0 +1,56 @@
+.colorText {
+    color: #134cc9; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;
+    font-family: FiraSansBold;
+}
+
+.title {
+    color: #ffffff;
+    margin-top: -550px;
+    width: 1200px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;       
+    line-height: 1;         
+}
+
+.botaoComeceAgora {
+    font-family: FiraSansRegular;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a73e8; 
+    color: white; 
+    width: 150px;
+    height: 50px;
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+  }
+
+  .botaoComeceAgora:hover {
+    background-color: #4285f4; 
+    color: #f1f1f1; 
+  }
+
+.paragrafo-introducao{
+    font-size: 1.5rem;
+    width: 600px;
+    color: #C8D2DB;
+    text-align: center;
+}
+
+.paragrafoGratis{
+    font-size: 1.5rem;
+    width: 600px;
+    color: #ffffff;
+}

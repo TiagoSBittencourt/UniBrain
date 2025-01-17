@@ -1,0 +1,109 @@
+
+
+.loginBackground{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  background-image: linear-gradient(#09642c, #004384);
+}
+
+.loginBox{
+  background-color: rgb(228, 231, 228);
+  padding: 20px;
+  min-width: 300px;
+  height: 70%;
+  width: 30%;
+  border: 1px solid gray;
+}
+
+.itemBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+
+.checkBox{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.loginTitle{
+  font-size: 30px;
+  color: black;
+}
+
+.field-Outline{
+  width: 85%;
+}
+
+.authButton{
+  width: 100%;
+  background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@font-face {
+  font-family: FiraSansBlack;
+  src: url(/public/assets/FiraSans-Black.ttf);
+}
+
+@font-face {
+  font-family: FiraSansBold;
+  src: url(/public/assets/FiraSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: FiraSansRegular;
+  src: url(/public/assets/FiraSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: Din-Round;
+  src: url(/public/assets/din-round-bold.ttf);
+}
+
+@font-face {
+  font-family: MPLUsRounded1;
+  src: url(/public/assets/MPLUSRounded1c-Bold.ttf);
+}

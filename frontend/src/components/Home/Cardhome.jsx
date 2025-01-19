@@ -1,18 +1,40 @@
-import React from 'react'
-import "./Cardhome.css"
-import MediaCard from './meio';
-import Thinking from '../../assets/UniBrain_Logo.jpg'
-import Logo from '../../assets/UniBrain_Logo.jpg'
+import React from 'react';
+import './Cardhome.css';
 
-function CardHome(){
+
+function CardHome() {
     return (
-        <div className="rootcard">
-            <MediaCard info={{image: Thinking, title: 'grátis. divertido. eficaz.', desc: 'Aprender com o Duolingo é divertido, e pesquisas comprovam que funciona mesmo! Com lições rápidas e curtinhas, você ganha pontos e desbloqueia novos níveis enquanto aprende como se comunicar na vida real.'}}/>
-            <MediaCard info={{image: Logo, title: 'baseado na ciência', desc: 'Combinamos metodologias aprovadas pela ciência com um conteúdo encantador para criar cursos eficazes que ensinam leitura, escrita, escuta e fala!'}}/>
-            <MediaCard info={{image: Thinking}}/>
-            <MediaCard info={{image: Thinking}}/>
+        <div className="container-imagens">
+            <div className="cartão">
+                <img src="/assets/estudante medalha.png" alt="Imagem 1" className="cartão-imagemEsquerda" />
+                <div className="cartão-texto">
+                    <h2>Transforme Estudo em Diversão!</h2>
+                    <p>Aprenda matérias complexas da faculdade de forma leve e divertida. Ganhe pontos, desbloqueie níveis e veja seu progresso no estilo de um jogo!</p>
+                </div>
+            </div>
+            <div className="cartão Esquerda">
+                <img src="/assets/gráfico minimalista-2.png" alt="Imagem 2" className="cartão-imagemDireita" />
+                <div className="cartão-texto">
+                    <h2>Apoio Personalizado</h2>
+                    <p>Nosso algoritmo ajusta os desafios ao seu ritmo, ajudando você a reforçar o que precisa e avançar no que já domina.</p>
+                </div>
+            </div>
+            <div className="cartão">
+                <img src="/assets/estudante-celular-1.png" alt="Imagem 3" className="cartão-imagemEsquerda" />
+                <div className="cartão-texto">
+                    <h2>Aprenda Onde e Quando Quiser</h2>
+                    <p>Com nosso aplicativo mobile, seus estudos estão sempre à mão. Progrida a qualquer hora, em qualquer lugar!</p>
+                </div>
+            </div>
+            <div className="cartão Esquerda">
+                <img src="/assets/caderno-1.png" alt="Imagem 4" className="cartão-imagemDireita" />
+                <div className="cartão-texto">
+                    <h2>Resolva Questões de Provas Reais</h2>
+                    <p>Pratique com exercícios baseados em provas e desafios reais. Esteja preparado para o que vier!</p>
+                </div>
+            </div>
         </div>
-    )
+    );
 }
 
 export default CardHome;

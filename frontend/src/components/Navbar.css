@@ -112,7 +112,7 @@
     }
   }
 
-  .navbar .rightSide .botaoLogin {
+  .navbar .rightSide .botaoLoginNavBar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +128,7 @@
     transition: all 0.3s ease; 
   }
   
-  .navbar .rightSide .botaoLogin:hover {
+  .navbar .rightSide .botaoLoginNavBar:hover {
     background-color: white; 
     color: #1a73e8;
   }

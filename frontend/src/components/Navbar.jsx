@@ -28,7 +28,7 @@ function Navbar(){
             </div>
             <div className="rightSide">
             <Link to="/"> Trilhas</Link>
-            <Link to="/login" className="botaoLogin"> Login</Link>
+            <Link to="/login" className="botaoLoginNavBar"> Login</Link>
             <Link to="/register" className="botaoRegistrar"> Registrar</Link>
             <button>
             <ReorderIcon />

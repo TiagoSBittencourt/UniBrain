@@ -7,18 +7,18 @@
     flex-direction: column;  
     justify-content: center; 
     align-items: center;     
-    height: 100vh;
-    font-family: FiraSansBold;
+    height: 70vh;
 }
 
 .title {
     color: #ffffff;
-    margin-top: -550px;
+    margin-top: -250px;
     width: 1200px;
     font-size: 3.5rem;
     font-weight: bold;
     text-align: center;       
-    line-height: 1;         
+    line-height: 1;     
+    font-family: FiraSansBold;    
 }
 
 .botaoComeceAgora {
@@ -40,6 +40,7 @@
   .botaoComeceAgora:hover {
     background-color: #4285f4; 
     color: #f1f1f1; 
+    transform: scale(1.2);
   }
 
 .paragrafo-introducao{
@@ -47,10 +48,12 @@
     width: 600px;
     color: #C8D2DB;
     text-align: center;
+    font-family: FiraSansRegular;
 }
 
 .paragrafoGratis{
     font-size: 1.5rem;
     width: 600px;
     color: #ffffff;
+    font-family: FiraSansRegular;
 }

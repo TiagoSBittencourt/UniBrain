@@ -21,13 +21,13 @@ function Navbar(){
                 <h1 className='nomeSite'>UniBrain</h1>
             </Link>
              <div className='hiddenLinks'>
-                <Link to="/"> Trilhas</Link>
+                <Link to="/homeTrilhas"> Trilhas</Link>
                 <Link to="/login"> Login</Link>
                 <Link to="/register"> Registrar</Link> 
              </div>
             </div>
             <div className="rightSide">
-            <Link to="/"> Trilhas</Link>
+            <Link to="/homeTrilhas"> Trilhas</Link>
             <Link to="/login" className="botaoLoginNavBar"> Login</Link>
             <Link to="/register" className="botaoRegistrar"> Registrar</Link>
             <button>

@@ -1,0 +1,52 @@
+.materias-container {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  align-items: center;
+  gap: 1px; 
+  padding: 100px;
+  font-family: FiraSansBold;
+  background-color: rgb(40, 42, 44);
+}
+
+.materia-item {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  width: 100%; 
+  padding: 100px;
+  height: 500px;
+}
+
+.materia-imagem img {
+  width: 100%;
+  height: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.materia-conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center; 
+}
+
+.materia-titulo {
+  font-size: 25px !important; 
+  margin: 0;
+  color: aqua;
+  width: 100%; 
+  font-family: FiraSansBold;
+}
+
+.paragrafo {
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  width: 80%; 
+  font-family: FiraSansRegular;
+}
+

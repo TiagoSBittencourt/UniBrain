@@ -1,0 +1,61 @@
+# FRONTEND
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# BACKEND
+
+# Python
+*.pyc
+*.pyo
+__pycache__
+
+# Django
+db.sqlite3
+*.log
+
+# Dependências
+venv/
+.env/
+*.egg-info
+*.dist-info
+
+# Configuração local
+*.local
+*.env
+
+# Arquivos de compilação
+*.o
+*.a
+*.so
+
+# IDEs e editores
+.vscode/
+.idea/
+
+# Outros
+*.swp
+.DS_Store

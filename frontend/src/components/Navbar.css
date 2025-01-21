@@ -1,0 +1,157 @@
+.navbar {
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 99; /*Faz ficar acima dos outros elementos */
+    height: 85px;
+    background-color: rgb(27, 29, 30);
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: FiraSansBold;
+  }
+
+  .navbar .leftSide {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 150px;
+    gap: 10px;
+  }
+
+  .navbar .leftSide img {
+    width: 82px;
+    margin: 0;
+    margin-left: -150px;
+    margin-top: -15px;
+  }
+
+  .navbar .leftSide .nomeSite {
+    font-size: 40px; 
+    color: white; 
+    margin: 0; 
+    font-weight: bold; 
+    cursor: pointer; 
+    margin-top: -65px;
+    margin-left: -60px;
+  }
+  
+  .navbar .rightSide {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -300px;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+  }
+  
+  .navbar .rightSide button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .navbar .rightSide svg {
+    font-size: 40px;
+  }
+  
+  .navbar #open {
+    padding-left: 0px;
+  }
+  .navbar #open img {
+    display: none;
+  }
+  
+  .navbar #close img {
+    display: inherit;
+  }
+  
+  .navbar #open .hiddenLinks {
+    display: inherit;
+    margin-left: 30px;
+  }
+  
+  .navbar #close .hiddenLinks {
+    display: none;
+  }
+  
+  .navbar #open a {
+    width: 70px;
+    margin: 5px;
+  }
+  @media only screen and (max-width: 900px) {
+    .navbar .rightSide a {
+      width: 70px;
+    }
+    .navbar .leftSide {
+      padding-left: 50px;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .navbar .rightSide a {
+      display: none;
+    }
+  
+    .navbar .rightSide {
+      justify-content: flex-end;
+      padding-right: 50px;
+      font-family: sans-serif;
+    }
+
+    .navbar .rightSide button {
+      display: inherit;
+    }
+  }
+
+  .navbar .rightSide .botaoLoginNavBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #1a73e8; 
+    background-color: rgb(27, 29, 30); 
+    color: #1a73e8;
+    width: 100px;
+    height: 50px;
+    align-content: center;
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+  }
+  
+  .navbar .rightSide .botaoLoginNavBar:hover {
+    background-color: white; 
+    color: #1a73e8;
+  }
+
+  .navbar .rightSide .botaoRegistrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a73e8; 
+    color: white; 
+    width: 100px;
+    height: 50px;
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    margin-left: 2px;
+  }
+
+  .navbar .rightSide .botaoRegistrar:hover {
+    background-color: #4285f4; 
+    color: #f1f1f1; 
+  }
+  
+  

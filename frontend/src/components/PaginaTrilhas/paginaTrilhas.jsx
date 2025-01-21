@@ -1,17 +1,17 @@
 import React from 'react';
-import "./MateriasDiv.css";
+import "./paginaTrilhas.css";
 
-function MateriasDiv() {
+function PaginaTrilhas() {
   
   return (
-    <div className="materias-container">
-      <div className="materia-item">
-        <div className="materia-imagem">
+    <div className="materias-containerT">
+      <div className="materia-itemT">
+        <div className="materia-imagemT">
           {/* <img src="/assets/c2.jpg" alt="Cálculo 2" />*/}
         </div>
-        <div className="materia-conteudo">
-          <h2 className="materia-titulo">Cálculo 2</h2>
-          <p className="paragrafo">
+        <div className="materia-conteudoT">
+          <h2 className="materia-tituloT">Cálculo 2</h2>
+          <p className="paragrafoT">
             Aprenda Cálculo 2 de forma interativa e gamificada. Nosso site oferece 
             trilhas de aprendizado divertidas que ajudam você a dominar tópicos como 
             integrais, derivadas e muito mais.
@@ -20,13 +20,13 @@ function MateriasDiv() {
         </div>
       </div>
 
-      <div className="materia-item">
-        <div className="materia-imagem">
+      <div className="materia-itemT">
+        <div className="materia-imagemT">
           {/*<img src="/assets/pea-2.jpg" alt="Probabilidade e Estatística Aplicada a Engenharia" />*/}
         </div>
-        <div className="materia-conteudo">
-          <h2 className="materia-titulo">Probabilidade e Estatística Aplicada a Engenharia</h2>
-          <p className="paragrafo">
+        <div className="materia-conteudoT">
+          <h2 className="materia-tituloT">Probabilidade e Estatística Aplicada a Engenharia</h2>
+          <p className="paragrafoT">
             Entenda conceitos fundamentais de probabilidade e estatística de forma prática, 
             com aplicações diretas em Engenharia. Nosso site tornará o aprendizado mais dinâmico e eficiente.
           </p>
@@ -37,4 +37,4 @@ function MateriasDiv() {
   );
 }
 
-export default MateriasDiv;
+export default PaginaTrilhas;

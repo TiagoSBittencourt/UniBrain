@@ -3,6 +3,7 @@ import './App.css'
 import Home from './components/Home/Home'
 import Register from './components/Authentication/Register'
 import Login from './components/Authentication/Login'
+import homeTrilhas from './components/PaginaTrilhas/homeTrilhas'
 import PassResetRequest from './components/Authentication/PassResetRequest'
 import PassReset from './components/Authentication/PassReset'
 import Quiz from './components/Quiz/Quiz'
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/homeTrilhas" element={<homeTrilhas/>}/>
         <Route path="/bem-vindo" element={<Quiz/>}/>
         <Route path="/request/password-reset" element={<PassResetRequest/>}/>
         <Route path="/password-reset/:token" element={<PassReset/>}/>

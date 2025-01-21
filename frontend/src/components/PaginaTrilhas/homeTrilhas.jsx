@@ -1,15 +1,15 @@
 import React from 'react'
 import Navbar from '../Navbar'
-import paginaTrilhas from '../PaginaTrilhas/paginaTrilhas'
+import PaginaTrilhas from '../PaginaTrilhas/paginaTrilhas'
 import Footer from '../Footer'
 import "./homeTrilhas.css"
 
-function homeTrilhas(){
+function HomeTrilhas(){
     return (
         <div className="homeTrilhasT">
             <div className="headerContainerT">
                 <Navbar/>                               
-                <paginaTrilhas/>
+                <PaginaTrilhas/>
                 <Footer/>
                      
             </div>
@@ -17,4 +17,4 @@ function homeTrilhas(){
     )
 }
 
-export default homeTrilhas;
+export default HomeTrilhas;

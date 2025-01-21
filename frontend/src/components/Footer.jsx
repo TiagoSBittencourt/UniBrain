@@ -42,7 +42,11 @@ const Footer=()=>{
                 <div className="sb_footer-links_div">
                     <h4>Nossas Redes Sociais</h4>
                     <div className="redesSociais">     
-                      <p><img src="/assets/github.png"  alt=""/></p>  
+                    <p>
+                       <a href="https://github.com/TiagoSBittencourt/UniBrain" target="_blank" rel="noopener noreferrer">
+                          <img src="/assets/github.png" alt="GitHub" />
+                       </a>
+                      </p>
                       <p><img src="/assets/linkedin.png" alt=""/></p>                                                     
                     </div>
                 </div>

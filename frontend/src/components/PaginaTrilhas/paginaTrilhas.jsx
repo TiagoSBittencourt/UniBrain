@@ -1,7 +1,7 @@
 import React from 'react';
 import "./paginaTrilhas.css";
 
-function paginaTrilhas() {
+function PaginaTrilhas() {
   
   return (
     <div className="materias-containerT">
@@ -37,4 +37,4 @@ function paginaTrilhas() {
   );
 }
 
-export default paginaTrilhas;
+export default PaginaTrilhas;

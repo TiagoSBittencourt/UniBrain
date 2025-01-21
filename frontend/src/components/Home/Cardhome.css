@@ -1,6 +1,6 @@
 .container-imagens {
     background-color: rgb(44, 46, 48);
-    color: white;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +43,7 @@
 
 .cartão-texto h2 {
     margin-bottom: 15px;
-    font-size: 30px;
+    font-size: 40px;
     font-family: FiraSansBold;
 }
 

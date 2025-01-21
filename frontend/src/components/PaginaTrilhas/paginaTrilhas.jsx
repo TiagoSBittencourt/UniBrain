@@ -12,9 +12,7 @@ function PaginaTrilhas() {
         <div className="materia-conteudoT">
           <h2 className="materia-tituloT">Cálculo 2</h2>
           <p className="paragrafoT">
-            Aprenda Cálculo 2 de forma interativa e gamificada. Nosso site oferece 
-            trilhas de aprendizado divertidas que ajudam você a dominar tópicos como 
-            integrais, derivadas e muito mais.
+            
           </p>
           
         </div>
@@ -25,10 +23,9 @@ function PaginaTrilhas() {
           {/*<img src="/assets/pea-2.jpg" alt="Probabilidade e Estatística Aplicada a Engenharia" />*/}
         </div>
         <div className="materia-conteudoT">
-          <h2 className="materia-tituloT">Probabilidade e Estatística Aplicada a Engenharia</h2>
+          <h2 className="materia-tituloT">Probabilidade & Estatística</h2>
           <p className="paragrafoT">
-            Entenda conceitos fundamentais de probabilidade e estatística de forma prática, 
-            com aplicações diretas em Engenharia. Nosso site tornará o aprendizado mais dinâmico e eficiente.
+    
           </p>
           
         </div>

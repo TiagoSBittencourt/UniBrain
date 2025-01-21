@@ -35,9 +35,9 @@
 }
 
 .materia-titulo {
-  font-size: 25px !important; 
+  font-size: 40px !important; 
   margin: 0;
-  color: aqua;
+  color: #134cc9;
   width: 100%; 
   font-family: FiraSansBold;
 }

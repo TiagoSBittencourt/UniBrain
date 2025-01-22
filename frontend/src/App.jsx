@@ -8,6 +8,7 @@ import PassResetRequest from './components/Authentication/PassResetRequest'
 import PassReset from './components/Authentication/PassReset'
 import Quiz from './components/Quiz/Quiz'
 import C2 from './components/Trilhas/TrilhaC2'
+import Probabilidade from './components/Trilhas/Probabilidade'
 import {Routes, Route} from 'react-router-dom'
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/request/password-reset" element={<PassResetRequest/>}/>
         <Route path="/password-reset/:token" element={<PassReset/>}/>
         <Route path="/c2" element={<C2/>}/>
+        <Route path="/probabilidade" element={<Probabilidade/>}/>
       </Routes>
 
     </>

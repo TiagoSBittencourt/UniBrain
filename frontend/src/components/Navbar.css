@@ -153,5 +153,28 @@
     background-color: #4285f4; 
     color: #f1f1f1; 
   }
+
+  .navbar .rightSide .botaoTrilhas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffffff; 
+    background-color: rgb(27, 29, 30); 
+    color: #ffffff;
+    width: 100px;
+    height: 50px;
+    align-content: center;
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    margin-right: 2px;
+    transition: all 0.3s ease; 
+  }
   
+  .navbar .rightSide .botaoTrilhas:hover {
+    background-color: white; 
+    color: rgb(27, 29, 30); 
+  }
+
+
   

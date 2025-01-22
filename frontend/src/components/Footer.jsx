@@ -8,34 +8,34 @@ const Footer=()=>{
               <div className="sb_footer-links">
                 <div className="sb_footer-links_div">
                   <h4>Trabalho</h4>
-                  <a href="/employer">
+                  <a href="/">
                       <p>Funcionários</p>
                   </a>
-                  <a href="/individual">
+                  <a href="/">
                       <p>Individual</p>
                   </a>
                 </div>
                 <div className="sb_footer-links_div">
                      <h4>Recursos</h4>
-                      <a href="/resource">
+                      <a href="/">
                           <p>Centro de Recursos</p>
                       </a>                     
                 </div>
                 <div className="sb_footer-links_div">
                   <h4>Parceiros</h4>
-                  <a href="/employer">
+                  <a href="/">
                       <p>Amarelo Girassol</p>
                   </a>
                 </div>
                 <div className="sb_footer-links_div">
                   <h4>Empresa</h4>
-                  <a href="/about">
+                  <a href="/">
                       <p>Sobre Nós</p>
                   </a>
-                  <a href="/career">
+                  <a href="/">
                       <p>Carreira</p>
                   </a>
-                  <a href="/contact">
+                  <a href="mailto:suporteunibrain@gmail.com" target="_blank" rel="noopener noreferrer">
                       <p>Contato</p>
                   </a>
                 </div>
@@ -60,10 +60,10 @@ const Footer=()=>{
                   </p>
               </div>
               <div className="sb_footer-below-links">
-                  <a href="/terms"><div><p>Termos & Condições</p></div></a>
-                  <a href="/privacy"><div><p>Privacidade</p></div></a>
-                  <a href="/security"><div><p>Segurança</p></div></a>
-                  <a href="/cookie"><div><p>Declarações de Cookies</p></div></a>
+                  <a href="/"><div><p>Termos & Condições</p></div></a>
+                  <a href="/"><div><p>Privacidade</p></div></a>
+                  <a href="/"><div><p>Segurança</p></div></a>
+                  <a href="/"><div><p>Declarações de Cookies</p></div></a>
               </div>
             </div>
 

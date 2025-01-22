@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import AxiosInstance from '../AxiosInstance';
 import { useNavigate } from 'react-router-dom';
 import SendDataQuiz from './SendDataQuiz'; // Importando o componente que envia os dados
 import './Quiz_style.css';
@@ -50,11 +52,13 @@ const Quiz = () => {
   const materias = [
     {
       titulo: 'Cálculo 2',
+      id_materia: '1',
       descricao: 'Curso avançado sobre integrais, derivadas, e aplicações práticas no campo da engenharia.',
       imagem: '/assets/c2.jpg',
     },
     {
       titulo: 'Probabilidade e estatística aplicado à engenharia',
+      id_materia: '2',
       descricao: 'Abordagem prática de probabilidade e estatística com foco em problemas reais da engenharia.',
       imagem: '/assets/probabilidade.jpg',
     },
@@ -65,10 +69,9 @@ const Quiz = () => {
     setRespostas(respostasSalvas);
   }, []);
 
-  const proxPagina = (resposta) => {
-    // Atualizar a resposta correspondente
+  const proxPagina = (resposta = '') => {
     const novasRespostas = [...respostas];
-    novasRespostas[paginaAtual] = resposta;
+    if (paginaAtual >= 0) novasRespostas[paginaAtual] = resposta;
 
     setRespostas(novasRespostas);
     localStorage.setItem('respostasQuiz', JSON.stringify(novasRespostas));
@@ -91,11 +94,52 @@ const Quiz = () => {
   };
 
   const iniciarMateria = () => {
-    if (!nivel) {
-      alert('Por favor, selecione o nível de desempenho antes de continuar.');
+    if (materiaSelecionada === null || !nivel) {
+      alert('Por favor, selecione uma matéria e o nível de desempenho antes de continuar.');
+      console.log('Materia selecionada:', materias[materiaSelecionada].titulo);
+      console.log('Nível:', nivel);
       return;
     }
-    navigate('/c2');
+  
+    const tituloMateria = materias[materiaSelecionada].titulo; // Acessa o título da matéria
+    console.log('Título da matéria selecionada:', tituloMateria); // Apenas para debug
+  
+    let trilhaNavigateURL = "";
+    if (materiaSelecionada === 0) {
+      trilhaNavigateURL = "c2";
+    }
+  
+    let idQuestoesFeitas = [];
+    if (nivel === "Ruim") {
+      idQuestoesFeitas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    }
+    if (nivel === "médio") {
+      idQuestoesFeitas = [1, 2, 3, 4, 5, 6, 7, 8];
+    }
+    if (nivel === "bom") {
+      idQuestoesFeitas = [1, 2, 3, 4];
+    }
+  
+    AxiosInstance.post('update-questoes/', {
+      titulo: tituloMateria, // Envia o título para o backend
+      idQuestoesFeitas,      // Envia os IDs das questões feitas
+    })
+      .then((response) => {
+        if (response.status === 200 || response.status === 201) {
+          navigate('/' + trilhaNavigateURL);
+        }
+      })
+      .catch((error) => {
+        console.error('Erro ao iniciar a matéria:', error);
+        alert('Ocorreu um erro ao iniciar a matéria.');
+        if (error.response) {
+          console.log('Erro no response:', error.response.data);
+        } else if (error.request) {
+          console.log('Erro na requisição:', error.request);
+        } else {
+          console.log('Erro desconhecido:', error.message);
+        }
+      });
   };
 
   const Botao = ({ texto, onClick, classe }) => (
@@ -185,7 +229,7 @@ const Quiz = () => {
         )}
 
         {/* Componente para enviar os dados do quiz para o backend */}
-        {finalizado && <SendDataQuiz />}
+        {/*Not working yet: finalizado && <SendDataQuiz />*/}
       </div>
     </div>
   );

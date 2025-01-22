@@ -43,7 +43,11 @@
 
 .cartão-texto h2 {
     margin-bottom: 15px;
+<<<<<<< HEAD
     font-size: 40px;
+=======
+    font-size: 30px;
+>>>>>>> fff7c52237af31e08065fbf80020b0e1c0cd0eea
     font-family: FiraSansBold;
 }
 

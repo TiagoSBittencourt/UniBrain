@@ -2,6 +2,7 @@ import React from 'react';
 import "./MateriasDiv.css";
 
 function MateriasDiv() {
+  
   return (
     <>
       <h1 className="cursosDisponiveis">Cursos Disponíveis</h1>

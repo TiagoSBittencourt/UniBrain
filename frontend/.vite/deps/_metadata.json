@@ -2,7 +2,14 @@
   "hash": "07420fb0",
   "configHash": "ce30306a",
   "lockfileHash": "ecb34e84",
-  "browserHash": "808e0f2e",
-  "optimized": {},
+  "browserHash": "05459cfa",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "11bf6fa7",
+      "needsInterop": true
+    }
+  },
   "chunks": {}
 }

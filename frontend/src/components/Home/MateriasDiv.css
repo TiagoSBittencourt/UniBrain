@@ -10,8 +10,22 @@
   gap: 1px; 
   padding: 100px;
   font-family: FiraSansBold;
+<<<<<<< HEAD
   background-color: rgb(40, 42, 44);
   background-color: rgb(40, 42, 44);
+=======
+}
+
+.cursosDisponiveis {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  font-family: FiraSansBold;
+  margin: 140px auto -180px auto; 
+  padding-top: 20px; 
+  width: 100%;
+  color: #134cc9;
+>>>>>>> main
 }
 
 .materia-item {
@@ -52,7 +66,11 @@
 .materia-titulo {
   font-size: 40px !important; 
   margin: 0;
+<<<<<<< HEAD
   color: #134cc9;
+=======
+  color: rgb(17, 101, 41);
+>>>>>>> main
   width: 100%; 
   font-family: FiraSansBold;
 }

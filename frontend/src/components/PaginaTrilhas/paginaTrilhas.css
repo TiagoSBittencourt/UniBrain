@@ -1,4 +1,4 @@
-.materias-containerT {
+.materias-container1 {
   display: flex;
   flex-direction: row; 
   justify-content: space-around;
@@ -6,7 +6,41 @@
   gap: 1px; 
   padding: 100px;
   font-family: FiraSansBold;
-  background-color: rgb(40, 42, 44);
+}
+
+.materias-container2 {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  align-items: center;
+  gap: 1px; 
+  padding: 100px;
+  font-family: FiraSansBold;
+  margin-top: -350px;
+  margin-bottom: 40px;
+}
+
+.materias-container3 {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  align-items: center;
+  gap: 1px; 
+  padding: 100px;
+  font-family: FiraSansBold;
+  margin-top: -600px;
+  margin-bottom: -200px;
+}
+
+.cursosDisponiveisT {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  font-family: FiraSansBold;
+  margin: 120px auto -100px auto; 
+  padding-top: 20px; 
+  width: 100%;
+  color: #134cc9;
 }
 
 .materia-itemT {
@@ -35,9 +69,9 @@
 }
 
 .materia-tituloT {
-  font-size: 60px !important; 
+  font-size: 40px !important; 
   margin: 0;
-  color: #134cc9;
+  color: rgb(17, 101, 41);
   width: 100%; 
   font-family: FiraSansBold;
 }
@@ -50,3 +84,36 @@
   font-family: FiraSansRegular;
 }
 
+.botaoHomeTrilhas {
+  font-family: FiraSansRegular;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a73e8;
+  color: white;
+  width: 140px;
+  height: 50px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.botaoHomeTrilhas:hover {
+  background-color: #4285f4;
+  color: #f1f1f1;
+  transform: scale(1.2);
+}
+
+.emBreveH1 {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  font-family: FiraSansBold;
+  margin: -150px auto 250px auto; 
+  padding-top: 20px; 
+  width: 100%;
+  color: #134cc9;
+}

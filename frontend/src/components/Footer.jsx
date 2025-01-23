@@ -23,7 +23,7 @@ const Footer=()=>{
                 </div>
                 <div className="sb_footer-links_div">
                   <h4>Parceiros</h4>
-                  <a href="/employer">
+                  <a href="/">
                       <p>Amarelo Girassol</p>
                   </a>
                 </div>
@@ -35,7 +35,11 @@ const Footer=()=>{
                   <a href="/">
                       <p>Carreira</p>
                   </a>
+<<<<<<< HEAD
                   <a href="/">
+=======
+                  <a href="mailto:suporteunibrain@gmail.com" target="_blank" rel="noopener noreferrer">
+>>>>>>> main
                       <p>Contato</p>
                   </a>
                 </div>

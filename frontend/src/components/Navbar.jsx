@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Logo from '../assets/UniBrain_Logo.png'
 import {Link} from "react-router-dom"
 import ReorderIcon from '@mui/icons-material/Reorder';
+import HomeTrilhas from './PaginaTrilhas/homeTrilhas';
 import "./Navbar.css"
 
 function Navbar(){
@@ -21,13 +22,13 @@ function Navbar(){
                 <h1 className='nomeSite'>UniBrain</h1>
             </Link>
              <div className='hiddenLinks'>
-                <Link to="/"> Trilhas</Link>
+                <Link to="/homeTrilhas"> Trilhas</Link>
                 <Link to="/login"> Login</Link>
                 <Link to="/register"> Registrar</Link> 
              </div>
             </div>
             <div className="rightSide">
-            <Link to="/"> Trilhas</Link>
+            <Link to="/homeTrilhas"> Trilhas</Link>
             <Link to="/login"> Login</Link>
             <Link to="/register"> Registrar</Link>
             <Link to="/perfil"> perfil </Link>

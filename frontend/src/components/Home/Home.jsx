@@ -5,6 +5,7 @@ import Baixo from './baixo'
 import CardHome from './Cardhome'
 import Navbar from '../Navbar'
 import MateriasDiv from './MateriasDiv'
+import Footer from '../Footer'
 
 
 
@@ -19,7 +20,8 @@ function Home(){
                 <CardHome/>
                 <MateriasDiv/>
                 <Baixo/>
-            
+                <Footer/>
+                     
             </div>
         </div>
     )

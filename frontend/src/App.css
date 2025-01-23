@@ -1,15 +1,3 @@
-
-
-.loginBackground{
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  justify-content: center;
-  background-image: linear-gradient(#09642c, #004384);
-}
-
 .loginBox{
   background-color: rgb(228, 231, 228);
   padding: 20px;
@@ -17,6 +5,7 @@
   height: 70%;
   width: 30%;
   border: 1px solid gray;
+  background-color: rgb(36, 38, 39);
 }
 
 .itemBox{
@@ -25,17 +14,14 @@
   align-items: center;
   width: 100%;
   height: 100px;
+  
 }
 
 .checkBox{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-.loginTitle{
-  font-size: 30px;
-  color: black;
+  
 }
 
 .field-Outline{
@@ -43,8 +29,9 @@
 }
 
 .authButton{
+  align-items: center;
   width: 100%;
-  background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgba(28,147,28,1) 76%);
+  /*background: linear-gradient(90deg, rgba(12,32,105,1) 33%, rgb(0, 204, 255) 76%);*/
 }
 
 .logo {

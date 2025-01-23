@@ -3,34 +3,44 @@ import './PaginadePerfil.css';
 import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField'; // Importando o TextField do MUI
 
-export default function EditUsername() {
+export default function EditUsername({ usuarioPerfil }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [usuarioPerfil, setUsuarioPerfil] = useState("Lucas");
+  const [userName, setUserName] = useState(usuarioPerfil || "");
+
+  
+  const handleSave = () => {
+   
+    setIsEditing(false);
+  };
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        setIsEditing(!isEditing);
+        if (isEditing) {
+          handleSave();  
+        } else {
+          setIsEditing(true);  
+        }
       }}
     >
       <label>
         {""}
         {isEditing ? (
           <TextField
-            value={usuarioPerfil}
+            value={userName}
             onChange={(e) => {
-              setUsuarioPerfil(e.target.value);
+              setUserName(e.target.value);
             }}
             label="Usuário"
             variant="outlined"
             fullWidth
           />
         ) : (
-          <b>{usuarioPerfil}</b>
+          <b>{userName}</b>
         )}
       </label>
-      
+
       <button type="submit">
         {isEditing ? "Salvar" : <EditIcon />}
       </button>

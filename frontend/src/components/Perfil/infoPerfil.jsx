@@ -2,17 +2,17 @@ import React from 'react'
 import AvatarPerfil from './Avatar';
 import './PaginadePerfil.css';
 
-function InfoPerfil(){
+function InfoPerfil({userperfil, emailperfil, senhaperfil}){
     return (
         <div className="infoPerfil">
             <div className="UserPerfil">
-                User  
+                {userperfil}
             </div>
             <div className="EmailPerfil">
-                Email    
+                {emailperfil}   
             </div>
             <div className="SenhaPerfil">
-                Senha
+                {senhaperfil}
             </div>
         </div>
     )

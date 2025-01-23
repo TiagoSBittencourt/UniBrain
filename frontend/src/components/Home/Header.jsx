@@ -1,11 +1,19 @@
 import React from 'react';
 import "./Header.css"
+import {Link} from "react-router-dom"
 import Logo from '/assets/UniBrain_Logo.png'
 
 export default function Header() {
     
     return <div className='container'>
-         <img  className='imagem' draggable="false" src={Logo} /> 
-        <h1 className='title'>Seja Bem-vindo ao <br/> <span className='colorText'>UniBrain</span> </h1>
+        <h1 className='title'> Estudar ficou mais simples usando <br/> <span className='colorText'>UniBrain</span> </h1>
+        <p className='paragrafo-introducao'>Estude as suas matérias da faculdade de maneira gameficada e divertida. <span className='paragrafoGratis'>É grátis</span></p>
+        <Link to="/register">
+        <button className="botaoComeceAgora">
+            Comece agora
+        </button> 
+     </Link> 
     </div>
+    
 }
+ 

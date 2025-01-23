@@ -46,13 +46,4 @@
     margin-bottom: 20px;
   }
 
-  .ButtonPerfil {
-    position: fixed;
-    left: 1200px;
-    top: 200px;
-    z-index: 1000;
-    padding: 10px 20px;
-    font-size: 16px;
-  }
- 
   

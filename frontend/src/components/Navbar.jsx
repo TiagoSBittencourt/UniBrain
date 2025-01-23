@@ -17,7 +17,8 @@ function Navbar(){
         <div className='navbar'>
             <div className="leftSide" id={openLinks ? "open" : "close"}>
             <Link to="/"> 
-                <img draggable="false" src={Logo} />
+                <img className= 'logoNavBar'draggable="false" src={Logo} />
+                <h1 className='nomeSite'>UniBrain</h1>
             </Link>
              <div className='hiddenLinks'>
                 <Link to="/"> Trilhas</Link>

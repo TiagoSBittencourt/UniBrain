@@ -113,10 +113,10 @@ const Quiz = () => {
     if (nivel === "Ruim") {
       idQuestoesFeitas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     }
-    if (nivel === "médio") {
+    if (nivel === "Médio") {
       idQuestoesFeitas = [1, 2, 3, 4, 5, 6, 7, 8];
     }
-    if (nivel === "bom") {
+    if (nivel === "Bom") {
       idQuestoesFeitas = [1, 2, 3, 4];
     }
   

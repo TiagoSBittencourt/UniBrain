@@ -7,6 +7,7 @@ from django.contrib.auth import get_user_model, authenticate
 from knox.models import AuthToken
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404
 
 
 User = get_user_model() # Reference the defined User Structure in models.py
@@ -61,12 +62,12 @@ class RegisterViewSet(viewsets.ViewSet):
 
 class UserUpdate(UpdateView):
     template_name = "cadastros/form.html"
-    model = User
+    model = AuthUser
     fields = ["nome_completo","cpf","telefone"]
     success_url = reverse_lazy("index")
 
     def get_object(self, queryset = None):
-        self.object = get_object_or_404(User, usuario=self.request.user)
+        self.object = get_object_or_404(AuthUser, username=self.request.user)
         return self.object
     
     def get_context_data(self,*args,**kwargs):

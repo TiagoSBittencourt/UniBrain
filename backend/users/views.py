@@ -63,7 +63,7 @@ class RegisterViewSet(viewsets.ViewSet):
 class UserUpdate(UpdateView):
     template_name = "cadastros/form.html"
     model = AuthUser
-    fields = ["nome_completo","cpf","telefone"]
+    fields = ["username","email",]
     success_url = reverse_lazy("index")
 
     def get_object(self, queryset = None):

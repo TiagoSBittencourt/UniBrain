@@ -24,3 +24,14 @@ class RegisterSerializers(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data) # import from .models
         return user
+    
+    
+
+
+from rest_framework import serializers
+from .models import AuthUser  # Importe seu modelo personalizado
+
+class AuthUserUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AuthUser
+        fields = ['username','email']

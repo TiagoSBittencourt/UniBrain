@@ -1,21 +1,16 @@
 import './TrilhaC2.css';
-import HeaderTrilhas from './HeaderTrilhas';
-import Navbar from "../Navbar";
-import SeriesSequencias from './SeriesSequencias';
-import EDOs from './EDO';
-import EDOXs from './EDOX';
-
 
 const C2 = () =>{
     return (
-      <div className="geral">
-        <Navbar />
-        <HeaderTrilhas />
-        <SeriesSequencias />
-        <EDOs />
-        <EDOXs />   
-      </div>
-    );
+        <div>
+            <h1 className='centered-text-big'>
+                C2
+            </h1>
+            <h2 className='centered-text-small'>
+                Em desenvolvimento
+            </h2>
+        </div>
+    )
 }
 
 export default C2

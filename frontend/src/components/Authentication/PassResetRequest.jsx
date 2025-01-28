@@ -19,6 +19,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import AxiosInstance from "../AxiosInstance";
+import "./Login.css"
 
 const PassReset = () =>{ 
     const { handleSubmit, control } = useForm()
@@ -62,7 +63,7 @@ const PassReset = () =>{
               <form onSubmit={handleSubmit(submission)}>
                 <Paper
                   elevation={10}
-                  sx={{ marginTop: 8, padding: 2, maxWidth: 450 }}
+                  sx={{ marginTop: 7, padding: 5, maxWidth: 500, }}
                 >
                   <Avatar
                     src="../assets/UniBrain_Logo.jpg"
@@ -71,8 +72,8 @@ const PassReset = () =>{
                       bgcolor: "secondary.main",
                       textAlign: "center",
                       mb: 1,
-                      width: 156,
-                      height: 156,
+                      width: 190,
+                      height: 190,
                     }}
                   />
                   <Typography
@@ -80,7 +81,7 @@ const PassReset = () =>{
                     variant="h5"
                     sx={{ textAlign: "center" }}
                   >
-                    Solicitar Nova Senha
+                    <span className='LoginTitle2'>Solicitar Nova Senha</span>
                   </Typography>
                   <Box sx={{ mt: 2 }}>
                     <CustomTextField

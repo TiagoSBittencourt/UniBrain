@@ -14,5 +14,6 @@ html, body {
 }
 
 body {
-  background: linear-gradient(#09642c, #004384);
+  background-color: rgb(36, 38, 39);
+  font-family: FiraSansBold;
 }

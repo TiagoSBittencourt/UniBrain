@@ -3,15 +3,14 @@
     justify-content: center;    
     align-items: center;        
     height: 100vh;              
-    background-color: rgb(27, 27, 141);
+    background-color: rgb(40, 42, 44);
   }
   
   .textobaixo {
     text-align: center;        
-    font-size: 50px;           
-    font-weight: bold;  
-    font-style: italic;    
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
+    font-size: 60px;           
+    font-weight: bold;    
+    font-family: FiraSansBold;  
     color: aliceblue;
     display: flex;             
     flex-direction: column;    
@@ -27,4 +26,4 @@
   .button {
     margin-top: 20px;  
   }
-  
+    

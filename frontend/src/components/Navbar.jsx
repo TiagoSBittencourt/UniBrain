@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import Logo from '../assets/UniBrain_Logo.png'
 import {Link} from "react-router-dom"
 import ReorderIcon from '@mui/icons-material/Reorder';
@@ -6,7 +6,7 @@ import "./Navbar.css"
  
 function Navbar(){
  
-    const [openLinks, setOpenLinks] = useState(false)
+    const [openLinks] = useState(false)
  
     // Bugged
     //const toggleNavbar = () => {
@@ -21,13 +21,13 @@ function Navbar(){
                 <h1 className='nomeSite'>UniBrain</h1>
             </Link>
              <div className='hiddenLinks'>
-                <Link to="/"> Trilhas</Link>
+                <Link to="/C2"> Trilhas</Link>
                 <Link to="/login"> Login</Link>
                 <Link to="/register"> Registrar</Link>
              </div>
             </div>
             <div className="rightSide">
-            <Link to="/"> Trilhas</Link>
+            <Link to="/C2"> Trilhas</Link>
             <Link to="/login" className="botaoLogin"> Login</Link>
             <Link to="/register" className="botaoRegistrar"> Registrar</Link>
             <button>

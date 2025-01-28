@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.containerConceitosSequencias {
+    width: 100%;
+    max-width: 640px;
+    margin: 150px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 40px 50px;
+    color: #e7e7e7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.containerConceitosSequencias h1 {
+    text-align: center;
+    font-size: 28px;
+}
+
+.containerConceitosSequencias hr {
+    height: 2px;
+    border: none;
+    background-color: #e7e7e7;
+}
+
+.containerConceitosSequencias h2 {
+    font-size: 27px;
+    font-weight: 500;
+    color: #e7e7e7;
+    margin-bottom: 10px;
+}
+
+.containerConceitosSequencias ul li {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.containerConceitosSequencias ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.containerConceitosSequencias ul li.correto:hover {
+    background-color: #4c9d84;
+}
+
+.containerConceitosSequencias ul li.errado:hover {
+    background-color: #662b2b;
+}
+
+
+.containerConceitosSequencias button {
+    margin: auto;
+    width: 100%;
+    max-width: 250px;
+    height: 65px;
+    background: #333;
+    color: #e7e7e7;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.containerConceitosSequencias button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.containerConceitosSequencias .indexConceitosSequencias {
+    margin: auto;
+    font-size: 18px;
+    text-align: center;
+}
+
+.containerConceitosSequencias .correto {
+    background-color: #4c9d84;
+    border-color: #397a66;
+}
+
+.containerConceitosSequencias .errado {
+    background-color: #662b2b;
+    border-color: #4c1f1f;
+}
+
+.resultado {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.containerConceitosSequencias .voltarButton {
+    margin: auto;
+    width: 50%;
+    height: 45px;
+    color: #e7e7e7;
+    font-size: 18.75px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    display: block;
+    text-align: center;
+    background-color: #333;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+
+.voltarButton:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .containerConceitosSequencias {
+        padding: 30px 20px;
+    }
+
+    .containerConceitosSequencias button,
+    .voltarButton {
+        width: 80%;
+    }
+}

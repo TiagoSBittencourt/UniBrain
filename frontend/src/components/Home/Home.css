@@ -3,8 +3,8 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: rgb(15, 77, 41);
+    font-family: FiraSansBold;
+    background-color: rgb(36, 38, 39);
 }
 
 body {

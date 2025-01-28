@@ -9,9 +9,8 @@
   .textobaixo {
     text-align: center;        
     font-size: 50px;           
-    font-weight: bold;  
-    font-style: italic;    
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
+    font-weight: bold;    
+    font-family: FiraSansBold;  
     color: aliceblue;
     display: flex;             
     flex-direction: column;    

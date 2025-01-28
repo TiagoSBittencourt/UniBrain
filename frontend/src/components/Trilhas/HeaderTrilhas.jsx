@@ -1,9 +1,9 @@
 
-import './HeaderTrilhas.css'
+import "./HeaderTrilhas.css"
 
 export default function HeaderTrilhas() {
     
-    return <div className='container'>
-        <h1 className='title'> Trilha de cálculo 2 </h1>
+    return <div className='containerT'>
+        <h1 className='titleT'> Trilha de cálculo 2 </h1>
     </div>
 }

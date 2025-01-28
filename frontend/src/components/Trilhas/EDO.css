@@ -1,32 +1,34 @@
 /* Estilo para a div "topic" */
-.topic {
+.topicEDO {
   width: 40rem;
-  background-color: #0f0f0f; /* Cor de fundo da div "topic" */
+  background-color: #0f0f0f; /* Cor de fundo da div */
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
   padding: 1rem;
   border-radius: 1rem;
+ /* Garante que os elementos dentro da div possam ser posicionados de forma relativa */
 }
 
 /* Estilo para o título */
-.titleS {
+.titleEDO {
   font-family: 'Franklin Gothic Medium', Arial, sans-serif;
   font-size: 3rem;
-  color: #e7e7e7; /* Cor do título */
+  color: #e7e7e7;
   text-align: center;
 }
 
 /* Estilo do dropdown */
-.dropdown {
+.dropdownEDO {
   margin-top: 2rem;
   width: 100%;
   text-align: center;
+  position: relative; /* Adicionando a posição relativa para que o menu seja posicionado corretamente */
 }
 
 /* Estilo do rótulo do dropdown */
-.dropdown-label {
+.dropdown-labelEDO {
   font-family: 'Franklin Gothic Medium', Arial, sans-serif;
   font-size: 1.5rem;
   color: #e7e7e7;
@@ -34,48 +36,70 @@
   display: block;
 }
 
-/* Estilo do botão de menu */
-.dropdown-button {
-  color: #e7e7e7; /* Cor do ícone do botão */
+/* Estilo para o botão de menu */
+.dropdown-buttonEDO {
+  color: #e7e7e7; /* Cor do ícone da seta */
   font-size: 2rem;
-  background-color: #333; /* Cor de fundo do botão */
+  background-color: #0f0f0f; /* Cor de fundo do botão, igual ao menu */
   padding: 0.5rem;
   border-radius: 0.5rem;
+  border: none; /* Remove a borda padrão */
+  display: inline-flex; /* Usar inline-flex para garantir que o botão se ajuste ao tamanho do conteúdo */
+  align-items: center; /* Alinha verticalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente o ícone */
+  cursor: pointer; /* Torna o botão clicável */
+  width: auto; /* Não forçar o botão a ter um tamanho fixo */
+  height: auto; /* O botão deve ajustar a altura ao tamanho do conteúdo */
 }
+
+/* Estilo do ícone da seta */
+.dropdown-icon {
+  color: #e7e7e7; /* Cor do ícone da seta */
+  font-size: 2rem; /* Definindo o tamanho adequado para o ícone */
+}
+
 
 /* Estilo do ícone do botão de menu */
 .material-icons {
-  color: #e7e7e7; /* Cor do ícone de menu */
+  color: #e7e7e7;
 }
 
-/* Estilo para o menu */
-.MuiMenu-paper {
-  background-color: #0f0f0f !important; /* Cor de fundo do menu (mesma cor da div "topic") */
-  width: 40rem; /* Largura personalizada do menu */
+/* Estilo para o menu suspenso */
+.menuDropdown {
+  background-color: #0f0f0f; /* Cor de fundo do menu */
+  width: 40rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  border-radius: 5px;
+  position: absolute; /* Posicionamento absoluto para que fique abaixo do botão */
+  top: 100%; /* Coloca o menu logo abaixo do botão */
+  left: 50%; /* Alinha o menu no centro */
+  transform: translateX(-50%); /* Centraliza o menu horizontalmente */
+  z-index: 999; /* Garante que o menu fique sobre outros conteúdos da página */
 }
 
 /* Estilo de cada item do menu */
-.MuiMenuItem-root {
-  background-color: #1a1a1a; /* Cor de fundo dos itens */
-  color: #e7e7e7 !important; /* Cor do texto */
+.menuItem {
+  background-color: #0f0f0f; /* Cor de fundo dos itens */
+  color: #e7e7e7; /* Cor do texto */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
-/* Garantir que o texto do item de menu tenha a cor desejada */
-.MuiMenuItem-root .MuiTypography-root {
-  color: #e7e7e7 !important; /* Cor do texto nos itens */
-}
-
-/* Estilo para os ícones dentro dos itens do menu */
-.MuiMenuItem-root .dropdown-icon {
-  color: #e7e7e7; /* Cor dos ícones no menu */
+/* Estilo do ícone dentro de cada item */
+.menuItem .dropdown-icon {
+  margin-right: 10px;
 }
 
 /* Estilo de hover nos itens do menu */
-.MuiMenuItem-root:hover {
+.menuItem:hover {
   background-color: #444; /* Cor de fundo ao passar o mouse */
 }
 
-/* Estilo para os ícones dentro do botão "menu" */
-.MuiIconButton-root {
-  color: #e7e7e7 !important; /* Cor do ícone do botão de menu */
+/* Garantir que o texto tenha a cor correta */
+.menuItem .MuiTypography-root {
+  color: #e7e7e7;
 }

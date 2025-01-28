@@ -8,12 +8,13 @@ import EDOXs from './EDOX';
 
 const C2 = () =>{
     return (
-      <div className="geral">
+      <div className="geralc2">
         <Navbar />
         <HeaderTrilhas />
         <SeriesSequencias />
         <EDOs />
-        <EDOXs />   
+        <EDOXs />
+        <div className="footer"></div>
       </div>
     );
 }

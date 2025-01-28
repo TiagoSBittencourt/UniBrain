@@ -1,74 +1,53 @@
-import "./SeriesSequencias.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ArticleIcon from "@mui/icons-material/Article";
 import DrawIcon from "@mui/icons-material/Draw";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown"; // Importando o ícone de seta para baixo
-import { Menu, MenuItem, IconButton } from "@mui/material";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import "./SeriesSequencias.css"; 
 
 export default function SeriesSequencias() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [selectedTopic, setSelectedTopic] = useState("");
+  const [openMenu, setOpenMenu] = useState(false);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget); // Abre o menu
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null); // Fecha o menu
-  };
-
-  const handleSelectTopic = (value) => {
-    setSelectedTopic(value);
-    window.location.href = value; // Redireciona para a URL
-    setAnchorEl(null); // Fecha o menu após a seleção
+  // Alterna a exibição do menu suspenso
+  const toggleMenu = () => {
+    setOpenMenu(!openMenu);
   };
 
   return (
-    <div className="topic">
-      <h1 className="titleS">Séries e Sequências</h1>
+    <div className="topicSS">
+      <h1 className="titleSS">Séries e Sequências</h1>
 
-      <div className="dropdown">
-        <label htmlFor="topics" className="dropdown-label">
+      <div className="dropdownSS">
+        <label htmlFor="topicsSS" className="dropdown-labelSS">
           Escolha um tópico:
         </label>
 
-        {/* Botão para abrir o menu */}
-        <IconButton onClick={handleClick} className="dropdown-button">
-          <ArrowDropDownIcon className="dropdown-icon" />{" "}
-          {/* Ícone de seta para baixo */}
-        </IconButton>
+        {/* Botão de menu */}
+        <button onClick={toggleMenu} className="dropdown-buttonSS">
+          <ArrowDropDownIcon className="dropdown-icon" />
+        </button>
 
-        {/* Menu suspenso customizado */}
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: "bottom", // Alinha o menu na parte inferior do botão
-            horizontal: "center", // Alinha o menu ao centro do botão
-          }}
-          transformOrigin={{
-            vertical: "top", // Faz o menu se alinhar com a parte superior
-            horizontal: "center", // Faz o menu se alinhar com o centro
-          }}
-        >
-          <MenuItem onClick={() => handleSelectTopic("/conceitos-sequencias")}>
-            <ArticleIcon className="dropdown-icon" />
-            Conceitos sobre Sequências
-          </MenuItem>
-          <MenuItem onClick={() => handleSelectTopic("/questoes-sequencias")}>
-            <DrawIcon className="dropdown-icon" />
-            Questões sobre Sequências
-          </MenuItem>
-          <MenuItem onClick={() => handleSelectTopic("/conceitos-series")}>
-            <ArticleIcon className="dropdown-icon" />
-            Conceitos sobre Séries
-          </MenuItem>
-          <MenuItem onClick={() => handleSelectTopic("/questoes-series")}>
-            <DrawIcon className="dropdown-icon" />
-            Questões sobre Séries
-          </MenuItem>
-        </Menu>
+        {/* Menu suspenso */}
+        {openMenu && (
+          <div className="menuDropdown">
+            <Link to="/ConceitosSequencias" className="menuItem">
+              <ArticleIcon className="dropdown-icon" />
+              Conceitos sobre Sequências
+            </Link>
+            <Link to="/QuestoesSequencias" className="menuItem">
+              <DrawIcon className="dropdown-icon" />
+              Questões sobre Sequências
+            </Link>
+            <Link to="/conceitos-series" className="menuItem">
+              <ArticleIcon className="dropdown-icon" />
+              Conceitos sobre Séries
+            </Link>
+            <Link to="/questoes-series" className="menuItem">
+              <DrawIcon className="dropdown-icon" />
+              Questões sobre Séries
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

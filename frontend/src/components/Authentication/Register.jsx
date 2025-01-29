@@ -47,7 +47,7 @@ import {
         password: data.password,
       })
         .then(() => {
-          navigate(`/bem-vindo`);
+          navigate(`/login`);
         })
         .catch((error) => {
           console.error("Erro ocorreu", error);

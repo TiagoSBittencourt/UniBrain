@@ -66,6 +66,11 @@
   align-items: center;
   gap: 10px;
   text-align: center; 
+  background-color: #134cc9;
+  width: 600px;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #1F1F1F;
 }
 
 .materia-tituloT {

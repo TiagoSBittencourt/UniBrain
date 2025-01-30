@@ -159,8 +159,10 @@ const Quiz = () => {
                 <p className="paragrafoBemVindo">
                   UniBrain é um projeto que transforma sua jornada acadêmica em uma experiência interativa e motivadora.
                 </p>
+                <div className="logo-Botão">
                 <img src="/assets/UniBrain.png" alt="Logo do UniBrain" className="logoSite" />
                 <Botao texto="Continuar" onClick={() => proxPagina()} classe="botao-continuar" />
+                </div>
               </div>
             ) : (
               <>
@@ -198,7 +200,7 @@ const Quiz = () => {
                   style={{ backgroundImage: `url(${materia.imagem})` }}
                 ></div>
                 <div className="materia-descricao">
-                  <h2 className="materia-titulo">{materia.titulo}</h2>
+                  <h2 className="materia-Titulo">{materia.titulo}</h2>
                   <p className="materia-paragrafo">{materia.descricao}</p>
                 </div>
               </div>

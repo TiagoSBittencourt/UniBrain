@@ -48,7 +48,9 @@ const Login = () => {
     })
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
-          navigate(`/c2`)
+          const token = response.data.token; // Extraia o token do response
+          localStorage.setItem("token", token);
+          navigate(`/bem-vindo`)
         }
       })
       .catch((error) => {

@@ -18,7 +18,15 @@ export default function CustomizedDialogs({ children }) {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button className="botaomudaravatar" 
+      variant="contained" 
+      onClick={handleClickOpen}
+      sx={{
+        position: "absolute",
+        top:300,
+        left:90,
+      }}
+      >
         Mudar o Avatar?
       </Button>
 

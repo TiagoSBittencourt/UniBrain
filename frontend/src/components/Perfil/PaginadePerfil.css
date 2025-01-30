@@ -1,49 +1,133 @@
 .containerperfil {
-    display: flex;
-    justify-content: center;  
-    align-items: center;      
-    height: 100vh;           
-    margin: 0;                
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 100vh;           
+  margin: 0;                
 }
 
 .boxperfil {
-    width: 1500px;
-    height: 800px;
-    background-color: #4f4848;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-sizing: border-box;
+  width: 1500px;
+  height: 800px;
+  background-color: rgb(27, 29, 30); 
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: relative; /* Necessário para o botão */
+  
+  display: flex; /* Ativa flexbox */
+  flex-direction: column; /* Mantém os elementos organizados em coluna */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
 }
 
+
 .infoPerfil {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-   
-  }
-  
-  
-  .UserPerfil {
-    font-size: 3rem;
-    color: #000000;
-    margin-bottom: 10px;
-  }
-  
-  
-  .EmailPerfil {
-    font-size: 3rem;
-    color: #000000;
-    margin-bottom: 10px;
-  }
-  
-  
-  .SenhaPerfil {
-    font-size: 3rem;
-    color: #000000;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 
   
+}
+
+.UserPerfil {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.EmailPerfil {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.SenhaPerfil {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.redefinirperfil {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  
+}
+
+
+.BotaoPerfil {
+  font-family: FiraSansRegular;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a73e8; 
+  color: white; 
+  width: 150px;
+  height: 50px;
+  border: none; 
+  padding: 8px 16px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: all 0.3s ease;
+}
+
+.BotaoPerfil:hover {
+  background-color: #4285f4; 
+  color: #f1f1f1; 
+  transform: scale(1.2);
+}
+
+.botaovoltar {
+  position: absolute; /* Remove a influência do boxperfil */
+  top: 20px; /* Distância do topo */
+  left: 20px; /* Distância da esquerda */
+  background-color: transparent; /* Remove fundo */
+  border: none; /* Remove borda */
+  cursor: pointer; /* Torna clicável */
+  font-size: 24px; /* Ajusta o tamanho do ícone */
+  color: white; /* Cor do ícone */
+}
+
+.botaovoltar:hover {
+  color: #4285f4; /* Cor ao passar o mouse */
+}
+
+.botaoeditarnome {
+  position: absolute;
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 24px; /* Ajusta o tamanho do ícone */
+}
+
+.botaoeditarnome:hover {
+  color: #c6c6c6; /* Cor ao passar o mouse */
+}
+
+.botaomudaravatar {
+  font-family: FiraSansRegular;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a73e8; 
+  color: white; 
+  width: 150px;
+  height: 50px;
+  border: none; 
+  padding: 8px 16px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: all 0.3s ease;
+}
+
+.botaomudaravatar:hover {
+  background-color: #4285f4; 
+  color: #f1f1f1; 
+  transform: scale(1.2);
+}

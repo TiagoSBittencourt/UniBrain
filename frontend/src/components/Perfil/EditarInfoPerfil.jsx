@@ -8,6 +8,7 @@ import CustomizedDialogs from './DialogPerfil';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import axios from 'axios';
 import './PaginadePerfil.css';
+import Navbar2 from '../Navbar2';
 
 function EditInfoPerfil() {
     const [file, setFile] = useState(null);  // Estado para armazenar a imagem
@@ -60,9 +61,10 @@ function EditInfoPerfil() {
 
     return (
         <div className="containerperfil">
+            <Navbar2 />
             <div className="boxperfil">
                 <Link to="/perfil">
-                    <button><ArrowBackIosNewIcon /></button> 
+                    <button className="botaovoltar" ><ArrowBackIosNewIcon /></button> 
                 </Link>
 
                 {file ? (
@@ -96,10 +98,13 @@ function EditInfoPerfil() {
 
                     <div className="SenhaPerfil">
                         Senha
-                        <Link to="/request/password-reset">
+                        <br/>
+                        <Link className="redefinirperfil" to="/request/password-reset">
                             Redefinir a Senha?
                         </Link>
-                        <ButaoPerfil text="Salvar Perfil" onClick={salvarPerfil}/>
+                        <Link to="/perfil"> 
+                            <ButaoPerfil text="Salvar Perfil" onClick={salvarPerfil}/>
+                        </Link>
                     </div>
                 </div>
             </div>

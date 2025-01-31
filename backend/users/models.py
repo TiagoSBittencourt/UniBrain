@@ -73,3 +73,19 @@ def password_reset_token_created(reset_password_token, *args, **kwargs):
 
     msg.attach_alternative(html_message, "text/html")
     msg.send()
+
+from django.db import models
+from django.contrib.auth.models import User
+from django.conf import settings
+
+class Materia(models.Model):
+    titulo = models.CharField(max_length=100)
+    descricao = models.TextField()
+
+class ProgressoMateria(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    materia = models.ForeignKey(Materia, on_delete=models.CASCADE)
+    idQuestoesFeitas = models.JSONField(default=list)  # Lista de índices ou IDs das questões resolvidas
+    
+    def __str__(self):
+        return f"{self.user.username} - {self.materia.titulo}"

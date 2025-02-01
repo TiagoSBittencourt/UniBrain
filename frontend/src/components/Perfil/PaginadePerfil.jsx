@@ -28,25 +28,29 @@ function Perfil() {
     }, []);
 
     return (
+        <div>
+        <Navbar2 className="navbar2"/>
         <div className="containerperfil">
-            <Navbar2 />
             <div className="boxperfil">
                 {post ? (
-                    <>
-                        <AvatarPerfil className="avatarpaginaperfil" file={post.data.avatar} />
-                        <InfoPerfil
-                            userperfil={post.data.first_name}  // Exibindo o nome do usuário
-                            emailperfil={post.data.email}      // Exibindo o e-mail do usuário
-                            senhaperfil="Senha"                
-                        />
-                    </>
+                    <div className="perfil-content">
+                        <AvatarPerfil className="avatarPaginaPerfil" file={post.data.avatar} />
+                        <div className="info-container">
+                            <InfoPerfil
+                                userperfil={<><strong>Nome:</strong> {post.data.first_name}</>}  
+                                emailperfil={<><strong>Email:</strong> {post.data.email}</>}      
+                                senhaperfil={<><strong>Senha:</strong> Senha</>}               
+                            />
+                        </div>
+                    </div>
                 ) : (
                     <p>error</p> 
                 )}
                 <Link to="/editar-perfil"> 
-                    <ButaoPerfil text="Editar Perfil" /> 
+                    <ButaoPerfil className="BotaoPerfil" text="Editar Perfil" /> 
                 </Link>
             </div>
+        </div>
         </div>
     );
 }

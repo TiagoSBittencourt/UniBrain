@@ -23,8 +23,8 @@ export default function CustomizedDialogs({ children }) {
       onClick={handleClickOpen}
       sx={{
         position: "absolute",
-        top:300,
-        left:90,
+        top:320,
+        left:130,
       }}
       >
         Mudar o Avatar?

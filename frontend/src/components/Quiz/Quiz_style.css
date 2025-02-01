@@ -279,4 +279,6 @@
   
   .fechar-materia:hover {
     color: rgb(221, 221, 221); 
+    background-color: #242627;
+    transform: scale(1);
   }

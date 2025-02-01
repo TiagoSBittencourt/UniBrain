@@ -29,9 +29,10 @@ function App() {
         <Route path="/bem-vindo" element={<Quiz/>}/>
         <Route path="/request/password-reset" element={<PassResetRequest/>}/>
         <Route path="/password-reset/:token" element={<PassReset/>}/>
+        
         {/*Adicione nessa parte de baixo as URL's restritas (precisa estar logado)*/}
         <Route element={<ProtectedRoute/>}>
-          <Route path="/bem-vindo" element={<Quiz/>}/>
+        <Route path="/bem-vindo" element={<Quiz/>}/>
           <Route path="/c2" element={<C2/>}/>
           <Route path="/perfil" element={<Perfil/>}/>
           <Route path="/editar-perfil" element={<EditInfoPerfil/>}/>

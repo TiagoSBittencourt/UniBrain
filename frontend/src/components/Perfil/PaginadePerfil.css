@@ -69,7 +69,7 @@
 
 .UserPerfil2 {
   margin-top: 50px;
-  justify-content: stretch; 
+  justify-content: normal; 
   font-size: 3rem;
   color: #ffffff;
   margin-bottom: 10px;
@@ -104,6 +104,11 @@
   font-size: 1rem;
   margin-bottom: 20px;
   margin-right: 150px;
+  transition: all 0.3s ease !important;
+}
+
+.redefinirperfil:hover {
+  opacity: 80%;
   
 }
 
@@ -124,12 +129,11 @@
   padding: 8px 16px; 
   border-radius: 8px; 
   cursor: pointer; 
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 }
 
 .BotaoPerfil:hover {
   background-color: #4285f4; 
-  transition: all 0.3s ease;
   color: #f1f1f1; 
   transform: scale(1.2);
 }
@@ -143,7 +147,7 @@
   cursor: pointer;
   font-size: 24px; 
   color: white; 
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 }
 
 .botaovoltar:hover {
@@ -152,17 +156,16 @@
 
 .botaoeditarnome {
   font-family: FiraSansRegular;
-  position: absolute;
   background-color: #1a73e8;
   color: #ffffff;
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
   cursor: pointer;
-  margin-left: 280px;
+  margin-left: 4px;
   margin-top: 14px;
   font-size: 24px; 
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 }
 
 .botaoeditarnome:hover {
@@ -182,12 +185,11 @@
   padding: 8px 16px; 
   border-radius: 8px; 
   cursor: pointer; 
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 }
 
 .botaomudaravatar:hover {
-  background-color: #4285f4; 
-  transition: all 0.3s ease;
+  background-color: #4285f4;  
   color: #f1f1f1; 
   transform: scale(1.2);
 }

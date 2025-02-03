@@ -105,6 +105,7 @@
   margin-bottom: 20px;
   margin-right: 150px;
   transition: all 0.3s ease !important;
+  font-family: "FiraSansBold";
 }
 
 .redefinirperfil:hover {
@@ -155,7 +156,7 @@
 }
 
 .botaoeditarnome {
-  font-family: FiraSansRegular;
+  font-family: FiraSansBold;
   background-color: #1a73e8;
   color: #ffffff;
   border: none;

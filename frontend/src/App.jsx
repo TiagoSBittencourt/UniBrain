@@ -35,7 +35,7 @@ function App() {
         <Route path="/bem-vindo" element={<Quiz/>}/>
           <Route path="/c2" element={<C2/>}/>
           <Route path="/perfil" element={<Perfil/>}/>
-          <Route path="/editar-perfil" element={<EditInfoPerfil/>}/>
+          <Route path="/editar-perfil" element={<EditInfoPerfil/>}/>  
           <Route path="/probabilidade" element={<Probabilidade/>}/>
         </Route>
       </Routes>

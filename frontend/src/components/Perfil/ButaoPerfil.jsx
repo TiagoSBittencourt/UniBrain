@@ -11,6 +11,7 @@ export default function ButaoPerfil({ text }) {
         position: "absolute", 
         bottom: 50, // Distância da borda inferior
         right: 60, // Distância da borda direita
+        fontFamily: "'FiraSansBold', sans-serif",
         
       }}
     >

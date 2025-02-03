@@ -25,6 +25,7 @@ export default function CustomizedDialogs({ children }) {
         position: "absolute",
         top:320,
         left:130,
+        fontFamily: "'FiraSansBold', sans-serif",
       }}
       >
         Mudar o Avatar?

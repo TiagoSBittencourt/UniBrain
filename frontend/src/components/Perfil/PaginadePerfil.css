@@ -41,7 +41,7 @@
   font-size: 3rem;
   color: #ffffff;
   margin-bottom: 10px;
-  margin-right: 14px;
+  margin-right: -28px;
   border: 2px solid white;
   padding: 5px;
   border-radius: 8px;
@@ -65,6 +65,7 @@
   border: 2px solid white;
   padding: 5px;
   border-radius: 8px;
+  margin-right: 4px;
 }
 
 .UserPerfil2 {

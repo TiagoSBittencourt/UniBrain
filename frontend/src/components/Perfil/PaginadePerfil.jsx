@@ -37,9 +37,9 @@ function Perfil() {
                         <AvatarPerfil className="avatarPaginaPerfil" file={post.data.avatar} />
                         <div className="info-container">
                             <InfoPerfil
-                                userperfil={<><strong>Nome:</strong> {post.data.first_name}</>}  
+                                userperfil={<><strong>Usuário:</strong> {post.data.first_name}</>}  
                                 emailperfil={<><strong>Email:</strong> {post.data.email}</>}      
-                                senhaperfil={<><strong>Senha:</strong> Senha</>}               
+                                senhaperfil={<><strong>Senha:</strong> ******</>}               
                             />
                         </div>
                     </div>

@@ -82,7 +82,7 @@ function EditInfoPerfil() {
                 <div className="infoPerfil">
                     <div className="UserPerfil2" style={{ width: '400px' }}>
                         {post ? (
-                            <p>Nome: <EditUsername usuarioPerfil={post.data.first_name} /></p>
+                            <p>Usuário: <EditUsername usuarioPerfil={post.data.first_name} /></p>
                         ) : error ? (
                             <p>{error}</p>
                         ) : (

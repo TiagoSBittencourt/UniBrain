@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, status
 from rest_framework.response import Response
 from .serializers import *
 from .models import *
@@ -54,45 +54,17 @@ class RegisterViewSet(viewsets.ViewSet):
         
 
 
-
-
-
-#Editar os dados do perfil do usuário 
-
-
-# class UserUpdate(UpdateView):
-#     template_name = "cadastros/form.html"
-#     model = AuthUser
-#     fields = ["username","email",]
-#     success_url = reverse_lazy("index")
-
-#     def get_object(self, queryset = None):
-#         self.object = get_object_or_404(AuthUser, username=self.request.user)
-#         return self.object
-    
-#     def get_context_data(self,*args,**kwargs):
-#         context = super().get_context_data(*args, **kwargs)
-        
-#         context["titulo"] = "Meus dados pessoais"
-#         context["botao"] = "Atualizar"
-
-#         return context
-
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
-from .models import AuthUser  # Importe o modelo personalizado
-from .serializers import AuthUserUpdateSerializer
-
-class UpdateAuthUserView(APIView):
-    permission_classes = [IsAuthenticated]  # Apenas usuários autenticados podem acessar
-
-    def patch(self, request, *args, **kwargs):
-        user = request.user  # Obtem o usuário autenticado (assume que o AuthUser é usado como modelo de autenticação)
-        serializer = AuthUserUpdateSerializer(user, data=request.data, partial=True)  # 'partial=True' permite atualização parcial
-
+class UserUpdateViewSet(viewsets.ViewSet):
+    def get_object(self):
+        # Retorna o usuário autenticado
+        return get_object_or_404(AuthUser, username=self.request.user.username)
+ 
+    def update(self, request, *args, **kwargs):
+        # Obtém o objeto do usuário autenticado
+        user = self.get_object()
+ 
+        # Serializa os dados recebidos e atualiza o usuário
+        serializer = AuthUserUpdateSerializer(user, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)

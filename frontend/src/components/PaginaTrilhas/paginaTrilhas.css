@@ -66,6 +66,11 @@
   align-items: center;
   gap: 10px;
   text-align: center; 
+  background-color: #134cc9;
+  width: 600px;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #1F1F1F;
 }
 
 .materia-tituloT {
@@ -112,7 +117,7 @@
   color: white;
   text-align: center;
   font-family: FiraSansBold;
-  margin: -280px auto 250px auto; 
+  margin: -150px auto 250px auto; 
   padding-top: 20px; 
   width: 100%;
   color: #134cc9;

@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Header.css"
 import {Link} from "react-router-dom"
+import Logo from '/assets/UniBrain_Logo.png'
 
 export default function Header() {
     

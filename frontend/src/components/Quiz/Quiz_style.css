@@ -16,31 +16,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(#09642c, #004384);
-  }
-  
-  .introducao{
-    font-size: 50px;
-    margin-bottom: 10px;
+    background-color: rgb(36, 38, 39);
   }
   
   .bemVindo{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 22px;
+    display: flex;
+    flex-direction: column; 
     align-items: center;
-    width: 600px;
+    width: auto;
     margin: auto;
     margin-top: 0px;
-    color: black;
-    display: flex;
-    flex-direction: column;
+    color: rgb(255, 255, 255);
     gap: 24px;
     border-radius: 10px;
     padding: 40px 50px;
+    font-family: FiraSansRegular;
+  }
+
+  .introducao{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center;
+    font-size: 60px;
+    margin-bottom: 20px;
+    margin-top: -200px;
+    font-family: FiraSansBold;
+  }
+
+  .paragrafoBemVindo{
+    font-size: 22px;
+    font-family: FiraSansRegular;
+  }
+
+  .logo-Botão{
+    margin-left: 350px;
   }
   
   .logoSite{
-    align-items: center;
     width: 350px;
     height: 350px;
   }
@@ -51,23 +64,19 @@
     background-attachment: scroll;
     background-color: rgb(0, 0, 0);
     background-size: auto;
-    border-bottom-color: rgb (117, 117, 117);
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    border-left-color: rgb(117,117,117);
     border-left-style: solid;
     border-left-width: 2px;
-    border-right-color: rgb(117,117,117);
     border-right-style: solid;
     border-right-width: 2px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-top-style: solid;
+    border-color: black;
     border-top-width: 2px;
-    border-top-color: rgb(117,117,117);
-    box-shadow: rgb(117, 117, 117) 0px 2px 0px 0px;
     box-sizing: border-box;
     column-gap: 8px;
     cursor: pointer;
@@ -77,13 +86,21 @@
     font-optical-sizing: auto;
     font-weight: 500;
     height: 64px;
-    width: 476px;
+    width: 500px;
     justify-content: center;
     letter-spacing: normal;
     line-height: 24px;
     text-align: center;
     text-decoration-color: white;
-    color: white;
+    color: rgb(255, 255, 255);
+    font-family: FiraSansRegular;
+    transition: all 0.3s ease; 
+  }
+
+  .botao:hover{
+    background-color: rgb(26, 23, 23);
+    background-color: rgb(26, 23, 23);
+    transform: scale(1.2);
   }
   
   .seta-voltar {
@@ -93,19 +110,24 @@
     width: 24px;
     height: 24px;         
     font-size: 50px;    
-    color: black;       
+    color: rgb(255, 255, 255);       
     cursor: pointer;    
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: FiraSansBold;
   }
   
   .seta-voltar:hover {
-    color: rgb(56, 56, 56); 
+    color: rgb(221, 221, 221); 
   }
   
   .botao.botao-continuar {
     width: 150px;
     font-size: 22px;
     align-items: center;
+    margin-left: 100px;
+  }
+
+  .botao.botao-continuar:hover{
+    background-color: black;
   }
   
   .container-BemVindo {
@@ -120,16 +142,17 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     font-size: 40px;
-    margin-top: 50px;
+    margin-top: -100px;
     margin-bottom: 20px;
   }
   
   .tituloEscolhaMateria{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    font-size: 40px;
-    margin-top: 90px;
+    font-size: 50px;
+    margin-top: -280px;
     margin-bottom: 50px;
+    color: white;
   }
   
   .escolha-materia {
@@ -142,19 +165,19 @@
   .materiaDiv {
     display: flex;
     align-items: center;
-    border: 2px solid #ccc;
     border-radius: 8px;
     margin: 20px auto;
     padding: 20px;
     width: 80%;
-    max-width: 750px;
+    max-width: 1200px;
     gap: 20px;
-    background-color: rgb(249, 249, 249);
+    background-color: #1F1F1F;
     cursor: pointer;
+    margin-bottom: 50px;
   }
   
   .materia-imagem {
-    width: 100px;
+    width: 150px;
     height: 100px;
     background-size: cover; 
     background-position: center; 
@@ -164,32 +187,36 @@
   
   .materia-descricao {
     text-align: left;
+    color: white;
   }
   
-  .materia-titulo {
+  .materia-Titulo {
     margin: 0;
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 10px;
     margin-top: -20px;
+    font-family: FiraSansBold;
   }
   
   .materia-paragrafo {
     margin: 5px 0 0 0;
-    font-size: 17px;
-    color: rgb(85, 85, 85);
+    font-size: 18px;
+    color: rgb(179, 179, 179);
+    font-family: FiraSansRegular;
   }
   
   .materia-click {
     text-align: center;
     margin: auto;
     padding: 20px;
-    border: 2px solid rgb(204, 204, 204);
+    border: 2px solid #1D1D1D;
     border-radius: 8px;
     width: 90%;
-    max-width: 600px;
-    background-color: rgb(249, 249, 249);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 90px;
+    max-width: 700px;
+    background-color: #1F1F1F;
+    font-family: FiraSansBold;
+    margin-top: -280px;
+    color: white;
   }
   
   .nivelamento {
@@ -197,20 +224,26 @@
     padding: 10px;
     width: 80%;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: FiraSansRegular;
+    background-color: #1A1A1A;
+    border: 2px solid #272626;
+    color: white;
+    border-radius: 5px;
   }
   
   .paragrafoNivelamento {
     margin-top: 20px;
     margin-bottom: 10px;
     font-size: 20px;
+    font-family: FiraSansRegular;
+    color: rgb(179, 179, 179);
   }
   
   .botao-iniciarMateria {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 10px 20px;
     font-size: 18px;
     background-color: rgb(0, 123, 255);
@@ -218,10 +251,15 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease; 
+    font-family: FiraSansBold;
+    width: 250px;
   }
   
   .botao-iniciarMateria:hover {
     background-color: rgb(0, 86, 200);
+    transform: scale(1.2);
+    opacity: 100%;
   }
   
   .fechar-materia {
@@ -232,7 +270,7 @@
     height: 24px;
     font-size: 50px;
     background: none; 
-    color: black; 
+    color: rgb(255, 255, 255); 
     border: none;  
     font-weight: bold; 
     cursor: pointer;    
@@ -240,5 +278,7 @@
   }
   
   .fechar-materia:hover {
-    color: rgb(56, 56, 56); 
+    color: rgb(221, 221, 221); 
+    background-color: #242627;
+    transform: scale(1);
   }

@@ -1,0 +1,198 @@
+.containerperfil {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 100vh;           
+  margin: 0;                
+}
+
+.navbar2{
+  width: 100vw;
+}
+
+.boxperfil {
+  width: 1500px;
+  height: 800px;
+  background-color: rgb(27, 29, 30); 
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: relative; 
+  
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.infoPerfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 330px;
+  margin-right: 420px;
+  
+}
+
+.UserPerfil {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-right: -28px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+  
+}
+
+.EmailPerfil {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-left: 346px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.SenhaPerfil {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+  margin-right: 4px;
+}
+
+.UserPerfil2 {
+  margin-top: 50px;
+  justify-content: normal; 
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-right: -92px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+  
+}
+
+.EmailPerfil2 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-left: 346px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.SenhaPerfil2 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+  margin-right: 146px;
+}
+
+.redefinirperfil {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  margin-right: 150px;
+  transition: all 0.3s ease !important;
+  font-family: "FiraSansBold";
+}
+
+.redefinirperfil:hover {
+  opacity: 80%;
+  
+}
+
+.info-container{
+  margin-bottom: 300px;
+}
+
+.BotaoPerfil {
+  font-family: FiraSansRegular;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a73e8; 
+  color: white; 
+  width: 150px;
+  height: 50px;
+  border: none; 
+  padding: 8px 16px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: all 0.3s ease !important;
+}
+
+.BotaoPerfil:hover {
+  background-color: #4285f4; 
+  color: #f1f1f1; 
+  transform: scale(1.2);
+}
+
+.botaovoltar {
+  position: absolute;
+  top: 20px; 
+  left: 20px; 
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer;
+  font-size: 24px; 
+  color: white; 
+  transition: all 0.3s ease !important;
+}
+
+.botaovoltar:hover {
+  color: #4285f4; 
+}
+
+.botaoeditarnome {
+  font-family: FiraSansBold;
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 4px;
+  margin-top: 14px;
+  font-size: 24px; 
+  transition: all 0.3s ease !important;
+}
+
+.botaoeditarnome:hover {
+  color: #c6c6c6; 
+}
+
+.botaomudaravatar {
+  font-family: FiraSansRegular;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a73e8; 
+  color: white; 
+  width: 150px;
+  height: 50px;
+  border: none; 
+  padding: 8px 16px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: all 0.3s ease !important;
+}
+
+.botaomudaravatar:hover {
+  background-color: #4285f4;  
+  color: #f1f1f1; 
+  transform: scale(1.2);
+}
+

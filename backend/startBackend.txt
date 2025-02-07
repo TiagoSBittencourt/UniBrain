@@ -3,3 +3,12 @@ python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py runserver
+
+
+///
+
+
+Como criar superuser
+python manage.py createsuperuser
+Depois abri a url do backend
+Depois loga com o usuario e seja feliz

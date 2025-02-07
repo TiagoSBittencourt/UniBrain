@@ -8,7 +8,8 @@ router.register('register', RegisterViewSet, basename='register')
 router.register('login', LoginViewSet, basename='login')
 
 urlpatterns = [
-    path('update-questoes/', AtualizarProgressoMateria.as_view(), name='atualizar_progresso'),
+    path('update-questoes/', AtualizarProgressoMateria.as_view(), name='atualizar-progresso'),
+    path('profile/update/', ProfileUpdateView.as_view(), name='profile-update'),
 ]
 
 urlpatterns += router.urls

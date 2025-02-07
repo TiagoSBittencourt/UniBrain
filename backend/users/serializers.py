@@ -30,3 +30,16 @@ class ProgressoMateriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProgressoMateria
         fields = ['user', 'materia', 'idQuestoesFeitas']
+
+
+class UserUpdateSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+
+class ProfileUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ['image']

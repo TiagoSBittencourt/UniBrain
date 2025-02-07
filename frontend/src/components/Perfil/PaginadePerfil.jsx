@@ -13,8 +13,9 @@ function Perfil() {
 
     // Função para fazer a requisição
     const MostrarPerfil = () => {
+
         const baseURL = "https://reqres.in/api/users/3"; 
-        axios.get(baseURL)
+        axios.get(baseURL, header)
             .then((response) => {
                 setPost(response.data); 
             })

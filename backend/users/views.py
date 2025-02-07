@@ -85,3 +85,18 @@ class AtualizarProgressoMateria(APIView):
 
         # Retorna a resposta de sucesso
         return Response(ProgressoMateriaSerializer(progresso).data, status=status.HTTP_200_OK)
+    
+class ProfileUpdateView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def put(self, request):
+        user = request.user
+        user_serializer = UserUpdateSerializer(user, data=request.data.get("user"), partial=True)
+        profile_serializer = ProfileUpdateSerializer(user.profile, data=request.data.get("profile"), partial=True)
+
+        if user_serializer.is_valid() and profile_serializer.is_valid():
+            user_serializer.save()
+            profile_serializer.save()
+            return Response({"user": user_serializer.data, "profile": profile_serializer.data}, status=status.HTTP_200_OK)
+        
+        return Response({"errors": user_serializer.errors | profile_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)

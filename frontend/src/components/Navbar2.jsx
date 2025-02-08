@@ -23,7 +23,7 @@ function Navbar2(){
             </div>
             <div className="rightSide2">
             <Link to="/homeTrilhas" className="botaoTrilhas2"> Trilhas</Link>
-            <Link to="/perfil"> Perfil </Link>
+            <Link to="/perfil" className="botaoPerfil"> Perfil </Link>
             </div>
         </div>
     )

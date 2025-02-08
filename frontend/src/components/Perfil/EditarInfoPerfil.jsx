@@ -11,21 +11,20 @@ import './PaginadePerfil.css';
 import Navbar2 from '../Navbar2';
 
 function EditInfoPerfil() {
-    const [file, setFile] = useState(null);  // Estado para armazenar a imagem
-    const [post, setPost] = useState(null);  // Estado para armazenar a resposta da API
-    const [error, setError] = useState(null); // Estado para armazenar erro (se ocorrer)
+    const [file, setFile] = useState(null);
+    const [post, setPost] = useState(null);
+    const [error, setError] = useState(null);
 
-    
     const MostrarPerfil = () => {
-        const baseURL = "https://reqres.in/api/users/3"; 
+        const baseURL = "https://reqres.in/api/users/3";
         axios.get(baseURL)
             .then((response) => {
-                setPost(response.data);  
-                setError(null);  
+                setPost(response.data);
+                setError(null);
             })
             .catch((error) => {
                 console.error('Erro ao fazer a requisição:', error);
-                setError("Erro ao carregar os dados do perfil.");  
+                setError("Erro ao carregar os dados do perfil.");
             });
     };
 
@@ -33,21 +32,19 @@ function EditInfoPerfil() {
         MostrarPerfil();
     }, []);
 
-   
     const handleFileChange = (newFile) => {
-        setFile(newFile);  
+        setFile(newFile);
     };
 
     const salvarPerfil = () => {
         const formData = new FormData();
-        formData.append('first_name', usuarioPerfil); // Envia o nome
-        formData.append('email', emailPerfil); // Envia o e-mail
+        formData.append('first_name', usuarioPerfil);
+        formData.append('email', emailPerfil);
         if (file) {
-            formData.append('avatar', file); // Envia a imagem se ela estiver presente
+            formData.append('avatar', file);
         }
 
-        
-        const baseURL = "https://reqres.in/api/users/2";  
+        const baseURL = "https://reqres.in/api/users/2";
         axios.put(baseURL, formData)
             .then((response) => {
                 console.log("Perfil atualizado com sucesso", response.data);
@@ -60,8 +57,9 @@ function EditInfoPerfil() {
     };
 
     return (
+        <div>
+        <Navbar2 className="navbar2"/>
         <div className="containerperfil">
-            <Navbar2 />
             <div className="boxperfil">
                 <Link to="/perfil">
                     <button className="botaovoltar" ><ArrowBackIosNewIcon /></button> 
@@ -82,9 +80,9 @@ function EditInfoPerfil() {
                 </CustomizedDialogs>
 
                 <div className="infoPerfil">
-                    <div className="UserPerfil">
+                    <div className="UserPerfil2" style={{ width: '400px' }}>
                         {post ? (
-                            <EditUsername usuarioPerfil={post.data.first_name} />
+                            <p>Usuário: <EditUsername usuarioPerfil={post.data.first_name} /></p>
                         ) : error ? (
                             <p>{error}</p>
                         ) : (
@@ -92,22 +90,26 @@ function EditInfoPerfil() {
                         )}
                     </div>
 
-                    <div className="EmailPerfil">
-                        {post ? post.data.email : error ? <p>{error}</p> : <p>Carregando e-mail...</p>}
+                    <div className="EmailPerfil2">
+                        {post ? <p>Email: {post.data.email}</p> : error ? <p>{error}</p> : <p>Carregando e-mail...</p>}
                     </div>
 
-                    <div className="SenhaPerfil">
-                        Senha
-                        <br/>
+                    <div className="SenhaPerfil2">
+                        <p>Senha:</p>
+                    </div>
+
+                    <div className="RedefinirSenha">
                         <Link className="redefinirperfil" to="/request/password-reset">
                             Redefinir a Senha?
                         </Link>
-                        <Link to="/perfil"> 
-                            <ButaoPerfil text="Salvar Perfil" onClick={salvarPerfil}/>
-                        </Link>
                     </div>
+
+                    <Link to="/perfil"> 
+                        <ButaoPerfil text="Salvar Perfil" onClick={salvarPerfil}/>
+                    </Link>
                 </div>
             </div>
+        </div>
         </div>
     );
 }

@@ -6,6 +6,10 @@
   margin: 0;                
 }
 
+.navbar2{
+  width: 100vw;
+}
+
 .boxperfil {
   width: 1500px;
   height: 800px;
@@ -14,14 +18,13 @@
   margin: 20px;
   border-radius: 10px;
   box-sizing: border-box;
-  position: relative; /* Necessário para o botão */
+  position: relative; 
   
-  display: flex; /* Ativa flexbox */
-  flex-direction: column; /* Mantém os elementos organizados em coluna */
-  justify-content: center; /* Centraliza verticalmente */
-  align-items: center; /* Centraliza horizontalmente */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
 }
-
 
 .infoPerfil {
   display: flex;
@@ -29,7 +32,8 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-
+  margin-bottom: 330px;
+  margin-right: 420px;
   
 }
 
@@ -37,25 +41,82 @@
   font-size: 3rem;
   color: #ffffff;
   margin-bottom: 10px;
+  margin-right: -28px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+  
 }
 
 .EmailPerfil {
   font-size: 3rem;
   color: #ffffff;
   margin-bottom: 10px;
+  margin-left: 346px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
 }
 
 .SenhaPerfil {
   font-size: 3rem;
   color: #ffffff;
   margin-bottom: 20px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+  margin-right: 4px;
 }
-.redefinirperfil {
-  font-size: 1rem;
-  margin-bottom: 20px;
+
+.UserPerfil2 {
+  margin-top: 50px;
+  justify-content: normal; 
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-right: -92px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
   
 }
 
+.EmailPerfil2 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-left: 346px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.SenhaPerfil2 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 8px;
+  margin-right: 146px;
+}
+
+.redefinirperfil {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  margin-right: 150px;
+  transition: all 0.3s ease !important;
+  font-family: "FiraSansBold";
+}
+
+.redefinirperfil:hover {
+  opacity: 80%;
+  
+}
+
+.info-container{
+  margin-bottom: 300px;
+}
 
 .BotaoPerfil {
   font-family: FiraSansRegular;
@@ -70,7 +131,7 @@
   padding: 8px 16px; 
   border-radius: 8px; 
   cursor: pointer; 
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 }
 
 .BotaoPerfil:hover {
@@ -80,34 +141,37 @@
 }
 
 .botaovoltar {
-  position: absolute; /* Remove a influência do boxperfil */
-  top: 20px; /* Distância do topo */
-  left: 20px; /* Distância da esquerda */
-  background-color: transparent; /* Remove fundo */
-  border: none; /* Remove borda */
-  cursor: pointer; /* Torna clicável */
-  font-size: 24px; /* Ajusta o tamanho do ícone */
-  color: white; /* Cor do ícone */
+  position: absolute;
+  top: 20px; 
+  left: 20px; 
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer;
+  font-size: 24px; 
+  color: white; 
+  transition: all 0.3s ease !important;
 }
 
 .botaovoltar:hover {
-  color: #4285f4; /* Cor ao passar o mouse */
+  color: #4285f4; 
 }
 
 .botaoeditarnome {
-  position: absolute;
+  font-family: FiraSansBold;
   background-color: #1a73e8;
   color: #ffffff;
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
   cursor: pointer;
-  margin-left: 10px;
-  font-size: 24px; /* Ajusta o tamanho do ícone */
+  margin-left: 4px;
+  margin-top: 14px;
+  font-size: 24px; 
+  transition: all 0.3s ease !important;
 }
 
 .botaoeditarnome:hover {
-  color: #c6c6c6; /* Cor ao passar o mouse */
+  color: #c6c6c6; 
 }
 
 .botaomudaravatar {
@@ -123,11 +187,12 @@
   padding: 8px 16px; 
   border-radius: 8px; 
   cursor: pointer; 
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 }
 
 .botaomudaravatar:hover {
-  background-color: #4285f4; 
+  background-color: #4285f4;  
   color: #f1f1f1; 
   transform: scale(1.2);
 }
+

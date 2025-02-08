@@ -2,9 +2,10 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import "./PaginadePerfil.css";
 
-export default function ButaoPerfil({ text }) {
+export default function ButaoPerfil({ text, onClick }) {
   return (
     <Button
+      onClick={onClick}
       className="BotaoPerfil"
       variant="contained"
       sx={{

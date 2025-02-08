@@ -91,32 +91,44 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import UserUpdateSerializer, ProfileUpdateSerializer
 
+import json
+from rest_framework.parsers import MultiPartParser, JSONParser
+
 class ProfileUpdateView(APIView):
     permission_classes = [permissions.IsAuthenticated]
+    parser_classes = [MultiPartParser, JSONParser]  # Adiciona suporte a multipart/form-data
 
-    def get(self, request):
+    def put(self, request):
         user = request.user
-        # Serializa os dados do usuário e do perfil
-        user_serializer = UserUpdateSerializer(user)
-        profile_serializer = ProfileUpdateSerializer(user.profile)
-        
-        # Retorna os dados serializados
+
+        # Desserializa o campo 'user' que foi enviado como uma string JSON
+        try:
+            user_data = json.loads(request.data.get('user'))
+        except (json.JSONDecodeError, TypeError):
+            return Response({"errors": {"user": "Dados inválidos"}}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Valida e atualiza o usuário
+        user_serializer = UserUpdateSerializer(user, data=user_data, partial=True)
+        profile_serializer = ProfileUpdateSerializer(user.profile, data=request.data, partial=True)
+
+        # Verifica se o user_serializer é válido
+        if not user_serializer.is_valid():
+            print("Erros no user_serializer:", user_serializer.errors)  # Log dos erros
+            return Response({"errors": user_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Verifica se o profile_serializer é válido
+        if not profile_serializer.is_valid():
+            print("Erros no profile_serializer:", profile_serializer.errors)  # Log dos erros
+            return Response({"errors": profile_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Salva os dados
+        user_serializer.save()
+        profile_serializer.save()
+
         return Response({
             "user": user_serializer.data,
             "profile": profile_serializer.data
         }, status=status.HTTP_200_OK)
-
-    def put(self, request):
-        user = request.user
-        user_serializer = UserUpdateSerializer(user, data=request.data.get("user"), partial=True)
-        profile_serializer = ProfileUpdateSerializer(user.profile, data=request.data.get("profile"), partial=True)
-
-        if user_serializer.is_valid() and profile_serializer.is_valid():
-            user_serializer.save()
-            profile_serializer.save()
-            return Response({"user": user_serializer.data, "profile": profile_serializer.data}, status=status.HTTP_200_OK)
-        
-        return Response({"errors": user_serializer.errors | profile_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
     
 class ProfileDetailView(APIView):
     permission_classes = [permissions.IsAuthenticated]

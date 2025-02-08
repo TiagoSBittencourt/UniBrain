@@ -3,21 +3,23 @@ import { Link } from 'react-router-dom';
 import AvatarPerfil from './Avatar';
 import InfoPerfil from './infoPerfil';
 import ButaoPerfil from './ButaoPerfil';
-import axios from 'axios';
-import './PaginadePerfil.css';
-import Navbar2 from '../Navbar2';
 import axiosInstance2 from './axiosInstance2';
+import Navbar2 from '../Navbar2';
+import './PaginadePerfil.css';
+
+const baseURL = 'http://127.0.0.1:8000/';
 
 function Perfil() {
-    const [post, setPost] = useState(null);  // Estado para armazenar a resposta da API
-    const [loading, setLoading] = useState(true);  // Estado para controlar o carregamento
+    const [perfil, setPerfil] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axiosInstance2.get('/profile/update/');
+                const response = await axiosInstance2.get('/profile/get/');
+                console.log("Dados do perfil recebidos:", response.data)
                 if (response.status === 200) {
-                    setPost(response.data);
+                    setPerfil(response.data);
                 }
             } catch (error) {
                 console.error("Erro ao buscar dados do perfil:", error);
@@ -25,7 +27,6 @@ function Perfil() {
                 setLoading(false);
             }
         };
-
         fetchData();
     }, []);
 
@@ -33,27 +34,35 @@ function Perfil() {
         return <p>Carregando...</p>;
     }
 
+    if (!perfil) {
+        return <p>Erro ao carregar o perfil.</p>;
+    }
+
     return (
         <div>
-            <Navbar2 className="navbar2"/>
+            <Navbar2 className="navbar2" />
             <div className="containerperfil">
                 <div className="boxperfil">
-                    {post ? (
-                        <div className="perfil-content">
-                            <AvatarPerfil className="avatarPaginaPerfil" file={post.data.avatar} />
-                            <div className="info-container">
-                                <InfoPerfil
-                                    userperfil={<><strong>Usuário:</strong> {post.data.first_name}</>}  
-                                    emailperfil={<><strong>Email:</strong> {post.data.email}</>}      
-                                    senhaperfil={<><strong>Senha:</strong> ******</>}               
-                                />
-                            </div>
+                    <div className="perfil-content">
+                        {/* Avatar */}
+                        <AvatarPerfil 
+                            className="avatarPaginaPerfil" 
+                            file={perfil.profile.image ? `${baseURL}${perfil.profile.image}` : null} 
+                        />
+
+                        {/* Informações do Usuário */}
+                        <div className="info-container">
+                            <InfoPerfil
+                                userperfil={<><strong>Usuário:</strong> {perfil.user.username}</>}
+                                emailperfil={<><strong>Email:</strong> {perfil.user.email}</>}
+                                senhaperfil={<><strong>Senha:</strong> ******</>}
+                            />
                         </div>
-                    ) : (
-                        <p>Erro ao carregar o perfil.</p> 
-                    )}
-                    <Link to="/editar-perfil"> 
-                        <ButaoPerfil className="BotaoPerfil" text="Editar Perfil" /> 
+                    </div>
+                    
+                    {/* Botão Editar Perfil */}
+                    <Link to="/editar-perfil">
+                        <ButaoPerfil className="BotaoPerfil" text="Editar Perfil" />
                     </Link>
                 </div>
             </div>

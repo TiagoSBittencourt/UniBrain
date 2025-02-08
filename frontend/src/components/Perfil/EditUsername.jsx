@@ -3,7 +3,7 @@ import './PaginadePerfil.css';
 import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField'; // Importando o TextField do MUI
 
-export default function EditUsername({ usuarioPerfil }) {
+export default function EditUsername({ usuarioPerfil, setUsuarioPerfil }) {
   const [isEditing, setIsEditing] = useState(false);
   const [userName, setUserName] = useState(usuarioPerfil || "");
   const [errorusername, setErrorusername] = useState(""); // Estado para armazenar a mensagem de erro
@@ -16,6 +16,7 @@ export default function EditUsername({ usuarioPerfil }) {
 
     setErrorusername(""); 
     setIsEditing(false); 
+    setUsuarioPerfil(userName); // Atualiza o estado no componente pai
   };
 
   return (

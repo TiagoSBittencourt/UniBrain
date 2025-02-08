@@ -5,7 +5,7 @@ export default function AvatarPerfil({file}) {
   return (
       <Avatar className="avatar-foto"
         alt="Avatar"
-        src={file || "/static/images/avatar/1.jpg"}
+        src={file}
         sx={{ 
           width: 216, height: 216,
           position: "absolute", 

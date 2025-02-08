@@ -100,3 +100,13 @@ class ProfileUpdateView(APIView):
             return Response({"user": user_serializer.data, "profile": profile_serializer.data}, status=status.HTTP_200_OK)
         
         return Response({"errors": user_serializer.errors | profile_serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+    
+class ProfileDetailView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        user_serializer = UserUpdateSerializer(user)
+        profile_serializer = ProfileUpdateSerializer(user.profile)
+
+        return Response({"user": user_serializer.data, "profile": profile_serializer.data}, status=status.HTTP_200_OK)

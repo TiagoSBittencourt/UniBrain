@@ -11,6 +11,6 @@ urlpatterns = [
     path('update-questoes/', AtualizarProgressoMateria.as_view(), name='atualizar-progresso'),
     path('profile/update/', ProfileUpdateView.as_view(), name='profile-update'),
     path("profile/get/", ProfileDetailView.as_view(), name="user-profile"),
-]
+]   
 
 urlpatterns += router.urls

@@ -94,6 +94,13 @@ from .serializers import UserUpdateSerializer, ProfileUpdateSerializer
 import json
 from rest_framework.parsers import MultiPartParser, JSONParser
 
+from rest_framework import permissions, status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializers import UserUpdateSerializer, ProfileUpdateSerializer
+import json
+from rest_framework.parsers import MultiPartParser, JSONParser
+
 class ProfileUpdateView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     parser_classes = [MultiPartParser, JSONParser]  # Adiciona suporte a multipart/form-data

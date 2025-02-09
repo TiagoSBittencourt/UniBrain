@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Importando useNavigate
 import AvatarPerfil from './Avatar';
 import EditUsername from './EditUsername';
 import ButaoPerfil from './ButaoPerfil';
@@ -16,6 +16,9 @@ function EditInfoPerfil() {
     const [error, setError] = useState(null);
     const [usuarioPerfil, setUsuarioPerfil] = useState('');
     const [emailPerfil, setEmailPerfil] = useState('');
+    
+    // Inicializa o hook de navegação
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         const MostrarPerfil = () => {
@@ -41,45 +44,59 @@ function EditInfoPerfil() {
     const salvarPerfil = () => {
         const formData = new FormData();
     
-        // Adiciona os dados do usuário como um objeto JSON
-        formData.append('user', JSON.stringify({
+        // Adiciona os dados do usuário em um objeto JSON
+        const userData = {
             username: usuarioPerfil,
             email: emailPerfil,
-        }));
+        };
+        formData.append('user', JSON.stringify(userData)); // Envia o objeto `user` como JSON
     
-        // Adiciona a imagem do perfil
+        // Adiciona a nova imagem do perfil (se houver)
         if (file) {
-            console.log('File being uploaded:', file);  // Debugging line
-            formData.append('profile[image]', file);
+            formData.append("image", file); // Envia o novo arquivo de imagem
+            const token = localStorage.getItem('token');
+            fetch('http://127.0.0.1:8000/profile/update/', {
+                method: 'PUT',
+                headers: {
+                  "Authorization": "Token " + token
+                },
+                body: formData
+              })
+              .then(response => response.json())
+              .then(data => console.log(data))
+              .catch(error => console.error('Error:', error));
         }
     
-        // Send the form data to the server
+        // Log para depuração (verifique o console do navegador)
+        for (let [key, value] of formData.entries()) {
+            console.log(key, value);
+        }
+    
         axiosInstance2.put('/profile/update/', formData, {
             headers: {
-                'Content-Type': 'multipart/form-data', // Ensure it's multipart/form-data
+                'Content-Type': 'multipart/form-data',
             },
         })
         .then((response) => {
             console.log("Perfil atualizado com sucesso", response.data);
+            setPost(response.data); // Atualiza o estado com os novos dados
             alert('Perfil atualizado com sucesso!');
+            // Redireciona para a página de perfil após salvar
+            navigate('/perfil');
         })
         .catch((error) => {
             console.error('Erro ao salvar o perfil:', error);
-            if (error.response) {
-                console.error("Data:", error.response.data); // Mensagem de erro do backend
-                console.error("Status:", error.response.status); // Código de status (400)
-                console.error("Headers:", error.response.headers); // Cabeçalhos da resposta
-                alert('Erro ao salvar o perfil: ' + (error.response.data.detail || 'Erro desconhecido'));
-            } else if (error.request) {
-                console.error("Request:", error.request); // Requisição feita, mas sem resposta
-                alert('Erro ao salvar o perfil: Sem resposta do servidor.');
+            console.error('Resposta do servidor:', error.response?.data); // Log detalhado do erro
+    
+            // Exibe os erros específicos retornados pelo servidor
+            if (error.response?.data?.errors) {
+                console.error('Erros:', error.response.data.errors);
+                alert('Erros ao salvar o perfil: ' + JSON.stringify(error.response.data.errors));
             } else {
-                console.error("Error:", error.message); // Erro ao configurar a requisição
-                alert('Erro ao salvar o perfil: ' + error.message);
+                alert('Erro ao salvar o perfil: ' + (error.response?.data?.detail || 'Erro desconhecido'));
             }
         });
     };
-    
 
     return (
         <div>
@@ -91,9 +108,9 @@ function EditInfoPerfil() {
                     </Link>
 
                     {file ? (
-                        <AvatarPerfil file={file} /> // Exibe a nova imagem selecionada
+                        <AvatarPerfil file={URL.createObjectURL(file)} /> // Exibe a nova imagem selecionada
                     ) : post ? (
-                        <AvatarPerfil file={`http://127.0.0.1:8000${post.profile.image}`} /> // Exibe a imagem atual do perfil
+                        <AvatarPerfil file={post.profile.image ? `http://127.0.0.1:8000${post.profile.image}` : null} /> // Exibe a imagem atual do perfil
                     ) : error ? (
                         <p>{error}</p> // Exibe uma mensagem de erro
                     ) : (
@@ -129,9 +146,8 @@ function EditInfoPerfil() {
                             </Link>
                         </div>
 
-                        <Link to="/editar-perfil">
-                            <ButaoPerfil text="Salvar Perfil" onClick={salvarPerfil}/>
-                        </Link>
+                        {/* Usando o onClick para chamar a função salvarPerfil e redirecionar */}
+                        <ButaoPerfil text="Salvar Perfil" onClick={salvarPerfil}/>
                     </div>
                 </div>
             </div>

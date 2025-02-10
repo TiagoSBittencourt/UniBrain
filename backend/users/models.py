@@ -93,10 +93,20 @@ class ProgressoMateria(models.Model):
 from PIL import Image
 import random
 
+from django.db import models
+from django.contrib.auth import get_user_model
+from django.conf import settings
+from PIL import Image
+import os
+import random
+
+User = get_user_model()
+
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='profile_pics', blank=True, null=True)
 
+    # Caminho das imagens padrão
     DEFAULT_PROFILE_IMAGES = [
         'profile_defaults/defaultProfile1.jpg',
         'profile_defaults/defaultProfile2.jpg',
@@ -110,18 +120,24 @@ class Profile(models.Model):
     ]
 
     def save(self, *args, **kwargs):
-        if not self.image:  # Assign a random img
-            self.image = random.choice(self.DEFAULT_PROFILE_IMAGES)
+        # Atribui uma imagem padrão se não houver imagem
+        if not self.image:
+            default_image = random.choice(self.DEFAULT_PROFILE_IMAGES)
+            self.image = default_image
 
         super().save(*args, **kwargs)
 
-        # Re-size using PIL
-        img = Image.open(self.image.path)
+        # Redimensiona a imagem usando Pillow
+        if self.image:
+            try:
+                img = Image.open(self.image.path)
 
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+                if img.height > 300 or img.width > 300:
+                    output_size = (300, 300)
+                    img.thumbnail(output_size)
+                    img.save(self.image.path)
+            except Exception as e:
+                print(f"Erro ao redimensionar a imagem: {e}")
 
     def __str__(self):
         return f"{self.user.username} Profile"

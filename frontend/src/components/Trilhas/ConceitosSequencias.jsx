@@ -50,7 +50,7 @@ const ConceitosSequencias = () => {
 
   return (
     <div className="containerConceitosSequencias">
-      <h1> Conceitos de sequências</h1>
+      <h1> Conceitos sobre Sequências</h1>
       <hr />
       {result ? (
         <>

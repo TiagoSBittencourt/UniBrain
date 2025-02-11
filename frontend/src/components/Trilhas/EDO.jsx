@@ -5,7 +5,7 @@ import DrawIcon from "@mui/icons-material/Draw";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "./EDO.css"; 
 
-export default function SeriesSequencias() {
+export default function EDOs() {
   const [openMenu, setOpenMenu] = useState(false);
 
   // Alterna a exibição do menu suspenso
@@ -15,7 +15,7 @@ export default function SeriesSequencias() {
 
   return (
     <div className="topicEDO">
-      <h1 className="titleEDO">EDOs</h1>
+      <h1 className="titleEDO">EDO I</h1>
 
       <div className="dropdownEDO">
         <label htmlFor="topicsEDO" className="dropdown-labelEDO">
@@ -30,19 +30,19 @@ export default function SeriesSequencias() {
         {/* Menu suspenso */}
         {openMenu && (
           <div className="menuDropdown">
-            <Link to="/conceitosSequencias" className="menuItem">
+            <Link to="/ConceitosEDOPrimeiraO" className="menuItem">
               <ArticleIcon className="dropdown-icon" />
               Conceitos sobre EDOs de primeira ordem
             </Link>
-            <Link to="/questoes-sequencias" className="menuItem">
+            <Link to="/QuestoesEDOPrimeiraO" className="menuItem">
               <DrawIcon className="dropdown-icon" />
               Questões sobre EDOs de primeira ordem
             </Link>
-            <Link to="/conceitos-series" className="menuItem">
+            <Link to="/ConceitosEDOSegundaO" className="menuItem">
               <ArticleIcon className="dropdown-icon" />
               Conceitos sobre EDOs de segunda ordem
             </Link>
-            <Link to="/questoes-series" className="menuItem">
+            <Link to="/QuestoesEDOSegundaO" className="menuItem">
               <DrawIcon className="dropdown-icon" />
               Questões sobre EDOs de segunda ordem
             </Link>

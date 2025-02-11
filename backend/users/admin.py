@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import AuthUser
+from .models import AuthUser, Materia
 
 # Chatgpt (Review)
 class CustomUserAdmin(UserAdmin):
@@ -10,3 +10,5 @@ class CustomUserAdmin(UserAdmin):
     ordering = ['email']
 
 admin.site.register(AuthUser, CustomUserAdmin)
+
+admin.site.register(Materia)

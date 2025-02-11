@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import AxiosInstance from '../AxiosInstance';
 import { useNavigate } from 'react-router-dom';
+import SendDataQuiz from './SendDataQuiz'; // Importando o componente que envia os dados
 import './Quiz_style.css';
 
-const Quiz = () => { 
+const Quiz = () => {
   const navigate = useNavigate();
-  const perguntas = [ 
+  const [paginaAtual, setPaginaAtual] = useState(-1);
+  const [finalizado, setFinalizado] = useState(false);
+  const [materiaSelecionada, setMateriaSelecionada] = useState(null);
+  const [nivel, setNivel] = useState('');
+  const [respostas, setRespostas] = useState([]);
+
+  const perguntas = [
     {
       titulo: 'Por qual razão você entrou no UniBrain?',
       opcoes: [
@@ -43,74 +52,129 @@ const Quiz = () => {
   const materias = [
     {
       titulo: 'Cálculo 2',
+      id_materia: '1',
       descricao: 'Curso avançado sobre integrais, derivadas, e aplicações práticas no campo da engenharia.',
-      imagem: '/assets/c2.jpg', // Path
+      imagem: '/assets/c2.jpg',
     },
     {
       titulo: 'Probabilidade e estatística aplicado à engenharia',
+      id_materia: '2',
       descricao: 'Abordagem prática de probabilidade e estatística com foco em problemas reais da engenharia.',
-      imagem: '/assets/probabilidade.jpg', // Path
+      imagem: '/assets/probabilidade.jpg',
     },
   ];
 
-  const [paginaAtual, setPaginaAtual] = useState(-1); // Variável, função para atualizar o estado da variável
-  const [finalizado, setFinalizado] = useState(false); 
-  const [materiaSelecionada, setMateriaSelecionada] = useState(null);
-  const [nivel, setNivel] = useState(''); // string vazia indica que n foi escolhido o nível
+  useEffect(() => {
+    const respostasSalvas = JSON.parse(localStorage.getItem('respostasQuiz')) || [];
+    setRespostas(respostasSalvas);
+  }, []);
 
-  const proxPagina = () => {
+  const proxPagina = (resposta = '') => {
+    const novasRespostas = [...respostas];
+    if (paginaAtual >= 0) novasRespostas[paginaAtual] = resposta;
+
+    setRespostas(novasRespostas);
+    localStorage.setItem('respostasQuiz', JSON.stringify(novasRespostas));
+
     if (paginaAtual < perguntas.length - 1) {
       setPaginaAtual(paginaAtual + 1);
     } else {
-      setFinalizado(true); //indica que foram finalizadas as perguntas, te levando a última página
+      setFinalizado(true);
     }
   };
 
   const voltarPagina = () => {
-    if (finalizado && materiaSelecionada !== null) { //se está na tela final e clicou em uma matéria
-      setMateriaSelecionada(null); 
+    if (finalizado && materiaSelecionada !== null) {
+      setMateriaSelecionada(null);
     } else if (finalizado) {
-      setFinalizado(false); // Faz retornar à página de perguntas
+      setFinalizado(false);
     } else {
       setPaginaAtual(paginaAtual - 1);
     }
   };
 
   const iniciarMateria = () => {
-    navigate('/c2'); 
+    if (materiaSelecionada === null || !nivel) {
+      alert('Por favor, selecione uma matéria e o nível de desempenho antes de continuar.');
+      console.log('Materia selecionada:', materias[materiaSelecionada].titulo);
+      console.log('Nível:', nivel);
+      return;
+    }
+  
+    const tituloMateria = materias[materiaSelecionada].titulo; // Acessa o título da matéria
+    console.log('Título da matéria selecionada:', tituloMateria); // Apenas para debug
+  
+    let trilhaNavigateURL = "";
+    if (materiaSelecionada === 0) {
+      trilhaNavigateURL = "c2";
+    }
+  
+    let idQuestoesFeitas = [];
+    if (nivel === "Ruim") {
+      idQuestoesFeitas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    }
+    if (nivel === "Médio") {
+      idQuestoesFeitas = [1, 2, 3, 4, 5, 6, 7, 8];
+    }
+    if (nivel === "Bom") {
+      idQuestoesFeitas = [1, 2, 3, 4];
+    }
+  
+    AxiosInstance.post('update-questoes/', {
+      titulo: tituloMateria, // Envia o título para o backend
+      idQuestoesFeitas,      // Envia os IDs das questões feitas
+    })
+      .then((response) => {
+        if (response.status === 200 || response.status === 201) {
+          navigate('/' + trilhaNavigateURL);
+        }
+      })
+      .catch((error) => {
+        console.error('Erro ao iniciar a matéria:', error);
+        alert('Ocorreu um erro ao iniciar a matéria.');
+        if (error.response) {
+          console.log('Erro no response:', error.response.data);
+        } else if (error.request) {
+          console.log('Erro na requisição:', error.request);
+        } else {
+          console.log('Erro desconhecido:', error.message);
+        }
+      });
   };
+
+  const Botao = ({ texto, onClick, classe }) => (
+    <button className={`botao ${classe}`} onClick={onClick}>
+      {texto}
+    </button>
+  );
 
   return (
     <div className="quizBackground">
       <div className="container-bemVindo">
-        {!finalizado ? ( 
+        {!finalizado ? (
           <div className="bemVindo">
-            {paginaAtual === -1 ? ( 
-              <div className="bemVindo">
+            {paginaAtual === -1 ? (
+              <div>
                 <h1 className="introducao">Bem-vindo ao UniBrain!</h1>
                 <p className="paragrafoBemVindo">
-                UniBrain é um projeto que transforma sua jornada acadêmica em uma experiência interativa e motivadora. 
-                Com um formato de aprendizado gamificado, oferecemos trilhas de estudo organizadas por matéria, 
-                projetadas para ajudá-lo a dominar os conteúdos da faculdade de forma prática e eficiente.
-                Com desafios progressivos, feedback instantâneo e ferramentas para acompanhar seu progresso, 
-                você terá tudo o que precisa para alcançar seus objetivos acadêmicos de forma divertida e envolvente. 
-                Descubra novas maneiras de aprender e conquiste o conhecimento, um nível por vez!
+                  UniBrain é um projeto que transforma sua jornada acadêmica em uma experiência interativa e motivadora.
                 </p>
                 <img src="/assets/UniBrain.png" alt="Logo do UniBrain" className="logoSite" />
-                <button className="botao botao-continuar" onClick={proxPagina}>
-                  Continuar
-                </button>
+                <Botao texto="Continuar" onClick={() => proxPagina()} classe="botao-continuar" />
               </div>
             ) : (
               <>
-                <h1 className="tituloPergunta">{perguntas[paginaAtual].titulo}</h1> 
-                {perguntas[paginaAtual].opcoes.map((opcao, idx) => ( //opcao é o valor atual sendo iterado, idx índice atual no array opcoes 
-                  <button key={idx} className="botao" onClick={proxPagina}> 
-                    {opcao}
-                  </button> //key seria o "chaveamento" e idx é o número deste tal chaveamento, key é exigido para identificar cada elemento de uma lista no domínio
+                <h1 className="tituloPergunta">{perguntas[paginaAtual].titulo}</h1>
+                {perguntas[paginaAtual].opcoes.map((opcao, idx) => (
+                  <Botao
+                    key={idx}
+                    texto={opcao}
+                    onClick={() => proxPagina(opcao)}
+                    classe={respostas[paginaAtual] === opcao ? 'selecionado' : ''}
+                  />
                 ))}
                 <div className="navegacao">
-                  <div className="seta-voltar" onClick={voltarPagina}>
+                  <div className="seta-voltar" onClick={voltarPagina} aria-label="Voltar">
                     &lt;
                   </div>
                 </div>
@@ -120,8 +184,15 @@ const Quiz = () => {
         ) : materiaSelecionada === null ? (
           <div className="escolha-materia">
             <h1 className="tituloEscolhaMateria">Escolha uma matéria</h1>
-            {materias.map((materia, idx) => ( //materia é o valor atual sendo iterado, idx índice atual no array, ou seja, a propriedade da materia a ser usada
-              <div key={idx} className="materiaDiv" onClick={() => setMateriaSelecionada(idx)}>
+            {materias.map((materia, idx) => (
+              <div
+                key={idx}
+                className="materiaDiv"
+                onClick={() => setMateriaSelecionada(idx)}
+                role="button"
+                tabIndex={0}
+                aria-label={`Selecionar matéria ${materia.titulo}`}
+              >
                 <div
                   className="materia-imagem"
                   style={{ backgroundImage: `url(${materia.imagem})` }}
@@ -152,14 +223,13 @@ const Quiz = () => {
               <option value="Médio">Médio</option>
               <option value="Bom">Bom</option>
             </select>
-            <button className="botao botao-iniciarMateria" onClick={iniciarMateria}>
-              Iniciar Matéria
-            </button>
-            <button className="fechar-materia" onClick={() => setMateriaSelecionada(null)}>
-              X
-            </button>        
+            <Botao texto="Iniciar Matéria" onClick={iniciarMateria} classe="botao-iniciarMateria" />
+            <Botao texto="X" onClick={() => setMateriaSelecionada(null)} classe="fechar-materia" />
           </div>
         )}
+
+        {/* Componente para enviar os dados do quiz para o backend */}
+        {/*Not working yet: finalizado && <SendDataQuiz />*/}
       </div>
     </div>
   );

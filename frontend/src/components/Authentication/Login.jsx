@@ -16,6 +16,7 @@ import { Link as RouterLink } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import AxiosInstance from "../AxiosInstance"
+import "./Login.css"
 
 const Login = () => {
   const { handleSubmit, control } = useForm()
@@ -47,7 +48,9 @@ const Login = () => {
     })
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
-          navigate(`/c2`)
+          const token = response.data.token; // Extraia o token do response
+          localStorage.setItem("token", token);
+          navigate(`/bem-vindo`)
         }
       })
       .catch((error) => {
@@ -72,7 +75,7 @@ const Login = () => {
         />
       ) : null}
       <form onSubmit={handleSubmit(submission)}>
-        <Paper elevation={10} sx={{ marginTop: 8, padding: 2, maxWidth: 450 }}>
+        <Paper elevation={10} className="caixaLogin"sx={{ marginTop: 7, padding: 2, maxWidth: 525, maxHeight: 900, }}>
           <Avatar
             src="../assets/UniBrain_Logo.jpg"
             sx={{
@@ -80,15 +83,15 @@ const Login = () => {
               bgcolor: "secondary.main",
               textAlign: "center",
               mb: 1,
-              width: 156,
-              height: 156,
+              width: 200,
+              height: 200,
             }}
           />
-          <Typography component="h1" variant="h5" sx={{ textAlign: "center" }}>
-            Login
+          <Typography className="LoginTitle" component="h1" variant="h5" sx={{ textAlign: "center" }}>
+          <span className='LoginTitle2'>Login</span>
           </Typography>
           <Box sx={{ mt: 2 }}>
-            <CustomTextField
+            <CustomTextField 
               label="Email"
               name="email"
               mt={2}
@@ -96,7 +99,7 @@ const Login = () => {
               fullWidth
               required
             />
-            <CustomPassField
+            <CustomPassField 
               label="Senha"
               name="password"
               mt={2}
@@ -105,7 +108,7 @@ const Login = () => {
               fullWidth
               required
             />
-            <CustomButton label="Login" type="submit" />
+            <CustomButton className='botaoLogin' label="Login" type="submit" />
             <Grid container justifyContent="space-between" sx={{ mt: 2 }}>
               <Grid item>
                 <Link component={RouterLink} to="/request/password-reset">

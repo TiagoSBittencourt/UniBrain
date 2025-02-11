@@ -17,6 +17,7 @@ import {
   import { useNavigate } from "react-router-dom";
   import {yupResolver} from "@hookform/resolvers/yup";
   import * as yup from "yup";
+  import "./Login.css"
   
   const Register = () => {
     const schema = yup.object({
@@ -46,7 +47,7 @@ import {
         password: data.password,
       })
         .then(() => {
-          navigate(`/bem-vindo`);
+          navigate(`/login`);
         })
         .catch((error) => {
           console.error("Erro ocorreu", error);
@@ -56,7 +57,7 @@ import {
     return (
       <Container className="loginBackground">
         <form onSubmit={handleSubmit(submission)}>
-          <Paper elevation={10} sx={{ marginTop: 8, padding: 2, maxWidth: 450 }}>
+          <Paper elevation={10} className="caixaRegistro" sx={{ marginTop: 8, padding: 2, maxWidth: 525 }}>
             <Avatar
               src="../assets/UniBrain_Logo.jpg"
               sx={{
@@ -64,8 +65,8 @@ import {
                 bgcolor: "secondary.main",
                 textAlign: "center",
                 mb: 1,
-                width: 156,
-                height: 156,
+                width: 190,
+                height: 190,
               }}
             />
             <Typography
@@ -73,7 +74,7 @@ import {
               variant="h5"
               sx={{ textAlign: "center" }}
             >
-              Registre-se
+              <span className='LoginTitle2'>Registre-se</span>
             </Typography>
             <Box sx={{ mt: 2 }}>
               <CustomTextField

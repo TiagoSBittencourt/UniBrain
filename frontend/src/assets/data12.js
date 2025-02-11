@@ -1,0 +1,42 @@
+export const data12 = [
+  {
+    question: "Qual é a Transformada de Laplace de f(t) = 3t?",
+    option1: "3/s²",
+    option2: "3/s",
+    option3: "3s",
+    option4: "3/s³",
+    ans: 1,
+  },
+  {
+    question: "Calcule a Transformada de Laplace de f(t) = e^(2t).",
+    option1: "1/(s-2)",
+    option2: "1/(s+2)",
+    option3: "2/s",
+    option4: "1/(s²-4)",
+    ans: 1,
+  },
+  {
+    question: "Determine a Transformada de Laplace de f(t) = sin(3t).",
+    option1: "3/(s²+9)",
+    option2: "s/(s²+9)",
+    option3: "1/(s²+9)",
+    option4: "9/(s²+9)",
+    ans: 1,
+  },
+  {
+    question: "Qual é a Transformada de Laplace de f(t) = t²?",
+    option1: "2/s³",
+    option2: "2/s²",
+    option3: "3/s²",
+    option4: "1/s³",
+    ans: 1,
+  },
+  {
+    question: "Calcule a Transformada de Laplace de f(t) = cos(4t).",
+    option1: "s/(s²+16)",
+    option2: "4/(s²+16)",
+    option3: "s/(s²+4)",
+    option4: "1/(s²+16)",
+    ans: 1,
+  },
+];

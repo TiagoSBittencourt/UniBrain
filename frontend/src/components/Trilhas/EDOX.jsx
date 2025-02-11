@@ -5,7 +5,7 @@ import DrawIcon from "@mui/icons-material/Draw";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "./EDOX.css"; 
 
-export default function SeriesSequencias() {
+export default function EDOXs() {
   const [openMenu, setOpenMenu] = useState(false);
 
   // Alterna a exibição do menu suspenso
@@ -15,7 +15,7 @@ export default function SeriesSequencias() {
 
   return (
     <div className="topicEDO">
-      <h1 className="titleEDO">EDOXs</h1>
+      <h1 className="titleEDO">EDO II</h1>
 
       <div className="dropdownEDO">
         <label htmlFor="topicsEDO" className="dropdown-labelEDO">
@@ -30,21 +30,21 @@ export default function SeriesSequencias() {
         {/* Menu suspenso */}
         {openMenu && (
           <div className="menuDropdown">
-            <Link to="/conceitosSequencias" className="menuItem">
+            <Link to="/ConceitosSeriesPotencia" className="menuItem">
               <ArticleIcon className="dropdown-icon" />
-              Conceitos sobre EDOXs de primeira ordem
+              Conceitos sobre a resolução por série de potência
             </Link>
-            <Link to="/questoes-sequencias" className="menuItem">
+            <Link to="/QuestoesSeriesPotencia" className="menuItem">
               <DrawIcon className="dropdown-icon" />
-              Questões sobre EDOXs de primeira ordem
+              Questões sobre ta resolução por série de potência
             </Link>
-            <Link to="/conceitos-series" className="menuItem">
+            <Link to="/ConceitosLaplace" className="menuItem">
               <ArticleIcon className="dropdown-icon" />
-              Conceitos sobre EDOXs de segunda ordem
+              Conceitos sobre transformada de Laplace
             </Link>
-            <Link to="/questoes-series" className="menuItem">
+            <Link to="/QuestoesLaplace" className="menuItem">
               <DrawIcon className="dropdown-icon" />
-              Questões sobre EDOXs de segunda ordem
+              Questões sobre transformada de Laplace
             </Link>
           </div>
         )}

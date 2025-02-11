@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom"; 
-import "./QuestoesSequencias.css"
+import "./ConceitosSequencias.css";
 import {data2} from "../../assets/data2"
 
 const QuestoesSequencias = () => {
@@ -50,7 +50,7 @@ const QuestoesSequencias = () => {
 
   return (
     <div className="containerConceitosSequencias">
-      <h1> Questões de sequências</h1>
+      <h1> Questões sobre Sequências</h1>
       <hr />
       {result ? (
         <>
@@ -77,7 +77,7 @@ const QuestoesSequencias = () => {
           </ul>
           <button onClick={next}>Próxima questão</button>
           <div className="indexConceitosSequencias">
-            {index + 1} de {data2.length} questões!
+            {index + 1} de {data2.length} questões
           </div>
         </>
       )}

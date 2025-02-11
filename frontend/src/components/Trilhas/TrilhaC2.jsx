@@ -1,6 +1,6 @@
 import './TrilhaC2.css';
+import Navbar from '../Navbar';
 import HeaderTrilhas from './HeaderTrilhas';
-import Navbar from "../Navbar";
 import SeriesSequencias from './SeriesSequencias';
 import EDOs from './EDO';
 import EDOXs from './EDOX';

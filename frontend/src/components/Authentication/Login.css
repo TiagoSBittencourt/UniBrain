@@ -1,0 +1,36 @@
+.loginBackground{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  background-color: rgb(36, 38, 39);
+  
+}
+
+.loginTitle{
+  font-size: 30px;
+  color: black;
+}
+
+.LoginTitle2{
+  font-size: 35px;
+  color: black;
+  font-family: FiraSansRegular;
+}
+
+.caixaLogin{
+  height: 550px;
+  font-family: FiraSansBold;
+}
+
+.caixaRegistro{
+  height: 675px;
+  font-family: FiraSansBold;
+}
+
+.botaoLogin{
+  background-color: blue !important;
+}
+

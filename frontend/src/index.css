@@ -14,5 +14,6 @@ html, body {
 }
 
 body {
-  background-color: #252525;
+  background-color: rgb(36, 38, 39);
+  font-family: FiraSansBold;
 }

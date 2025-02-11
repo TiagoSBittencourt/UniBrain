@@ -38,11 +38,11 @@ export default function SeriesSequencias() {
               <DrawIcon className="dropdown-icon" />
               Questões sobre Sequências
             </Link>
-            <Link to="/conceitos-series" className="menuItem">
+            <Link to="/ConceitosSeries" className="menuItem">
               <ArticleIcon className="dropdown-icon" />
               Conceitos sobre Séries
             </Link>
-            <Link to="/questoes-series" className="menuItem">
+            <Link to="/QuestoesSeries" className="menuItem">
               <DrawIcon className="dropdown-icon" />
               Questões sobre Séries
             </Link>

@@ -20,6 +20,7 @@ import { useNavigate } from "react-router-dom";
 import AxiosInstance from "../AxiosInstance";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import "./Login.css"
 
 
 const PassResetRequest = () =>{ 

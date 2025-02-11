@@ -24,3 +24,9 @@ class RegisterSerializers(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data) # import from .models
         return user
+    
+
+class ProgressoMateriaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProgressoMateria
+        fields = ['user', 'materia', 'idQuestoesFeitas']

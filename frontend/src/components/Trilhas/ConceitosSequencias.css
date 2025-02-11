@@ -8,6 +8,7 @@
     width: 100%;
     max-width: 640px;
     margin: 150px auto;
+    background-color: #1f1f1f;
     display: flex;
     flex-direction: column;
     gap: 20px;

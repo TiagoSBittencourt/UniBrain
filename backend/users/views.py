@@ -48,3 +48,40 @@ class RegisterViewSet(viewsets.ViewSet):
             return Response(serializer.data, status=201) # Not include the pass info by default as defined in serializer (write_only)
         else:
             return Response(serializer.errors, status=400)
+        
+
+from rest_framework import permissions
+from django.shortcuts import get_object_or_404
+from .models import ProgressoMateria, Materia
+from .serializers import ProgressoMateriaSerializer
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.views import APIView
+from django.contrib.auth import get_user_model
+
+
+class AtualizarProgressoMateria(APIView):
+    permission_classes = [permissions.IsAuthenticated]  # Permite apenas usuários autenticados
+
+    def post(self, request, *args, **kwargs):
+        titulo = request.data.get('titulo')
+        idQuestoesFeitas = request.data.get('idQuestoesFeitas')  # Espera uma lista de IDs ou índices de questões
+
+        if not titulo or not idQuestoesFeitas:
+            return Response({"detail": "Dados incompletos"}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Obtém a matéria
+        materia = get_object_or_404(Materia, titulo=titulo)
+
+        # Tenta encontrar ou criar o progresso existente do usuário nessa matéria
+        progresso, created = ProgressoMateria.objects.get_or_create(
+            user=request.user,  # Atribui o usuário logado
+            materia=materia,
+        )
+
+        # Atualiza as questões concluídas
+        progresso.idQuestoesFeitas = idQuestoesFeitas
+        progresso.save()
+
+        # Retorna a resposta de sucesso
+        return Response(ProgressoMateriaSerializer(progresso).data, status=status.HTTP_200_OK)

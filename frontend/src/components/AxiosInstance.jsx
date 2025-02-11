@@ -18,7 +18,7 @@ const AxiosInstance = axios.create({
 
 AxiosInstance.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem("Token")
+        const token = localStorage.getItem("token")
 
         if (token) {
             config.headers.Authorization = `Token ${token}` // if passed token
@@ -42,7 +42,7 @@ AxiosInstance.interceptors.response.use(
     (error) => {
         // token expired or invalid
         if (error.response && error.response.status === 401) {
-            localStorage.removeItem("Token") // remove the token
+            localStorage.removeItem("token") // remove the token
             window.location.href = "/login" // redirect -> login page
         }
 

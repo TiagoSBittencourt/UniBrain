@@ -49,6 +49,7 @@ export default function EditUsername({ usuarioPerfil, setUsuarioPerfil }) {
               error={!!errorusername} // Ativa o estado de erro do TextField
               helperText={errorusername} // Exibe a mensagem de erro
               sx={{
+                width: "300px",
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
                     borderColor: "#ffffff", // Cor da borda

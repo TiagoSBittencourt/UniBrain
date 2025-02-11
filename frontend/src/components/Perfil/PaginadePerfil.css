@@ -29,84 +29,52 @@
 .infoPerfil {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start; 
   padding: 20px;
-  margin-bottom: 330px;
-  margin-right: 420px;
-  
+  margin-bottom: 400px;
 }
 
-.UserPerfil {
-  font-size: 3rem;
+.UserPerfil, .EmailPerfil, .SenhaPerfil {
+  width: 400px;  
+  min-height: 50px; 
+  font-size: 1.5rem;
   color: #ffffff;
-  margin-bottom: 10px;
-  margin-right: -28px;
   border: 2px solid white;
-  padding: 5px;
+  padding: 10px;
   border-radius: 8px;
-  
-}
-
-.EmailPerfil {
-  font-size: 3rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-  margin-left: 346px;
-  border: 2px solid white;
-  padding: 5px;
-  border-radius: 8px;
-}
-
-.SenhaPerfil {
-  font-size: 3rem;
-  color: #ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+  text-align: left; 
   margin-bottom: 20px;
-  border: 2px solid white;
-  padding: 5px;
-  border-radius: 8px;
-  margin-right: 4px;
+  margin-right: 350px;
 }
 
-.UserPerfil2 {
-  margin-top: 50px;
-  justify-content: normal; 
-  font-size: 3rem;
+.UserPerfil2, .EmailPerfil2, .SenhaPerfil2 {
+  width: 400px;  
+  min-height: 50px;
+  font-size: 1.5rem;
   color: #ffffff;
-  margin-bottom: 10px;
-  margin-right: -92px;
   border: 2px solid white;
-  padding: 5px;
+  padding: 10px;
   border-radius: 8px;
-  
-}
-
-.EmailPerfil2 {
-  font-size: 3rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-  margin-left: 346px;
-  border: 2px solid white;
-  padding: 5px;
-  border-radius: 8px;
-}
-
-.SenhaPerfil2 {
-  font-size: 3rem;
-  color: #ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  position: relative; 
+  margin-right: 350px;
   margin-bottom: 20px;
-  border: 2px solid white;
-  padding: 5px;
-  border-radius: 8px;
-  margin-right: 146px;
 }
 
 .redefinirperfil {
+  display: block;
+  margin: 10px auto 0; 
+  text-align: center;
   font-size: 1rem;
-  margin-bottom: 20px;
-  margin-right: 150px;
-  transition: all 0.3s ease !important;
-  font-family: "FiraSansBold";
+  color: white;
+  transition: all 0.3s ease;
+  margin-top: -10px;
 }
 
 .redefinirperfil:hover {
@@ -114,8 +82,10 @@
   
 }
 
-.info-container{
-  margin-bottom: 300px;
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
 }
 
 .BotaoPerfil {
@@ -157,21 +127,24 @@
 }
 
 .botaoeditarnome {
-  font-family: FiraSansBold;
+  
+  left: 420px; /* Mantém ele fora do retângulo */
+  top: 50%;
+  margin-left: 10px;
+  transform: translateY(0%); /* Centraliza verticalmente */
   background-color: #1a73e8;
   color: #ffffff;
   border: none;
   border-radius: 8px;
-  padding: 10px 20px;
+  padding: 8px 12px;
   cursor: pointer;
-  margin-left: 4px;
-  margin-top: 14px;
-  font-size: 24px; 
-  transition: all 0.3s ease !important;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .botaoeditarnome:hover {
-  color: #c6c6c6; 
+  background-color: #4285f4;
+  color: #c6c6c6;
 }
 
 .botaomudaravatar {

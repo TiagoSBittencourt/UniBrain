@@ -137,7 +137,7 @@ function EditInfoPerfil() {
                         </div>
 
                         <div className="SenhaPerfil2">
-                            <p>Senha:</p>
+                            <p>Senha: ******</p>
                         </div>
 
                         <div className="RedefinirSenha">

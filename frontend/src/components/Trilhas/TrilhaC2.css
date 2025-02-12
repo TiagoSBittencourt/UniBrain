@@ -1,26 +1,11 @@
 
-.centered-text-big {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 6rem; 
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 0; 
-    margin: 0; 
-    height: 50vh; 
-  }
+.geralc2{
+  background-color: #252525; 
+}
+
+
+.footer {
+  background-color: #252525;
+  height: 5rem;
   
-  .centered-text-small {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 2.5rem; 
-    color: #ffffff; 
-    font-weight: 500;
-    margin-top: 10px; 
-    margin-bottom: 0; 
-    height: 50vh; 
-  }
+}

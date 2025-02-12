@@ -1,5 +1,5 @@
 import "./TrilhaProbabilidade.css";
-import Navbar from "../Navbar";
+import Navbar2 from "../Navbar2";
 import HeaderTrilhasProbabilidade from "./HeaderTrilhaProbabilidade";
 import FundamentosProbabilidade from "./FundamentosProbabilidade";
 import EstatisticaDescritiva from "./EstatisticaDescritiva";
@@ -8,7 +8,7 @@ import Tecnicas from "./Tecnicas";
 const PE = () => {
   return (
     <div className="geralPE2">
-      <Navbar />
+      <Navbar2 />
       <HeaderTrilhasProbabilidade />
       <FundamentosProbabilidade />
       <EstatisticaDescritiva />

@@ -13,6 +13,11 @@ export default function EditUsername({ usuarioPerfil, setUsuarioPerfil }) {
       setErrorusername("O nome de usuário deve ter pelo menos 3 caracteres."); // Mensagem de erro
       return; // Impede a salvagem se o campo for inválido
     }
+    else if (userName.length > 20) {
+      setErrorusername("O nome de usuário não deve ultrapassar 20 caracteres."); // Mensagem de erro
+      return; // Impede a salvagem se o campo for inválido
+    }
+    
 
     setErrorusername(""); 
     setIsEditing(false); 
@@ -39,7 +44,10 @@ export default function EditUsername({ usuarioPerfil, setUsuarioPerfil }) {
                 setUserName(e.target.value);
                 if (e.target.value.length < 3) {
                   setErrorusername("O nome de usuário deve ter pelo menos 3 caracteres.");
-                } else {
+                } else if (e.target.value.length > 20) {
+                  setErrorusername("O nome de usuário não deve ultrapassar 20 caracteres.");
+                } 
+                else {
                   setErrorusername(""); // Limpa o erro se o campo for válido
                 }
               }}

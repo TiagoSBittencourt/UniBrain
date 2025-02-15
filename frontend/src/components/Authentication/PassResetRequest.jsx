@@ -85,7 +85,7 @@ const PassReset = () =>{
                   </Typography>
                   <Box sx={{ mt: 2 }}>
                     <CustomTextField
-                      label="Email"
+                      label="Verificar Email"
                       name="email"
                       mt={2}
                       mb={2}

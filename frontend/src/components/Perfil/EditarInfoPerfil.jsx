@@ -8,7 +8,7 @@ import CustomizedDialogs from './DialogPerfil';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import axiosInstance2 from './axiosInstance2';
 import './PaginadePerfil.css';
-import Navbar2 from '../Navbar2';
+import Navbar3 from '../Navbar3';
 
 function EditInfoPerfil() {
     const [file, setFile] = useState(null);
@@ -100,7 +100,7 @@ function EditInfoPerfil() {
 
     return (
         <div>
-            <Navbar2 className="navbar2"/>
+            <Navbar3 className="navbar2"/>
             <div className="containerperfil">
                 <div className="boxperfil">
                     <Link to="/perfil">
@@ -137,7 +137,7 @@ function EditInfoPerfil() {
                         </div>
 
                         <div className="SenhaPerfil2">
-                            <p>Senha:</p>
+                            <p>Senha: ******</p>
                         </div>
 
                         <div className="RedefinirSenha">

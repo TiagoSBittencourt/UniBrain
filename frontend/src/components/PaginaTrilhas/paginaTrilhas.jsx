@@ -26,7 +26,7 @@ function PaginaTrilhas() {
           </div>
           <div className="materia-conteudoT">
             <h2 className="materia-tituloT">Probabilidade & Estatística</h2>
-              <Link to="/probabilidade">
+              <Link to="/PE">
                 <button className="botaoHomeTrilhas">Acessar Curso</button>
               </Link>
             

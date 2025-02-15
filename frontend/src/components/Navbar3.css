@@ -1,0 +1,202 @@
+.navbar3 {
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 99; /*Faz ficar acima dos outros elementos */
+    height: 85px;
+    background-color: rgb(27, 29, 30);
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: FiraSansBold;
+  }
+
+  .navbar3 .leftSide3 {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 150px;
+    gap: 10px;
+  }
+
+  .navbar3 .leftSide3 img {
+    width: 82px;
+    margin: 0;
+    margin-left: -150px;
+    margin-top: -15px;
+  }
+
+  .navbar3 .leftSide3 .nomeSite3 {
+    font-size: 40px; 
+    color: white; 
+    margin: 0; 
+    font-weight: bold; 
+    cursor: pointer; 
+    margin-top: -65px;
+    margin-left: -60px;
+  }
+  
+  .navbar3 .rightSide3 {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -300px;
+  }
+  
+  .navbar3 a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+  }
+  
+  .navbar3 .rightSide3 button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .navbar3 .rightSide3 svg {
+    font-size: 40px;
+  }
+  
+  .navbar3 #open {
+    padding-left: 0px;
+  }
+  .navbar3 #open img {
+    display: none;
+  }
+  
+  .navbar3 #close img {
+    display: inherit;
+  }
+  
+  .navbar3 #open .hiddenLinks {
+    display: inherit;
+    margin-left: 30px;
+  }
+  
+  .navbar3 #close .hiddenLinks {
+    display: none;
+  }
+  
+  .navbar3 #open a {
+    width: 70px;
+    margin: 5px;
+  }
+  @media only screen and (max-width: 900px) {
+    .navbar3 .rightSide3 a {
+      width: 70px;
+    }
+    .navbar3 .leftSide3 {
+      padding-left: 50px;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .navbar3 .rightSide3 a {
+      display: none;
+    }
+  
+    .navbar3 .rightSide3 {
+      justify-content: flex-end;
+      padding-right: 50px;
+      font-family: sans-serif;
+    }
+
+    .navbar3 .rightSide3 button {
+      display: inherit;
+    }
+  }
+
+  .navbar3 .rightSide3 .botaoLoginNavBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #1a73e8; 
+    background-color: rgb(27, 29, 30); 
+    color: #1a73e8;
+    width: 100px;
+    height: 50px;
+    align-content: center;
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+  }
+  
+  .navbar3 .rightSide3 .botaoLoginNavBar:hover {
+    background-color: white; 
+    color: #1a73e8;
+  }
+
+  .navbar3 .rightSide3 .botaoRegistrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a73e8; 
+    color: white; 
+    width: 100px;
+    height: 50px;
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    margin-left: 2px;
+  }
+
+  .navbar3 .rightSide3 .botaoRegistrar:hover {
+    background-color: #4285f4; 
+    color: #f1f1f1; 
+  }
+
+  .navbar3 .rightSide3 .botaoTrilhas3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffffff; 
+    background-color: rgb(27, 29, 30); 
+    color: #ffffff;
+    width: 100px;
+    height: 50px;
+    align-content: center;
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    margin-right: 2px;
+    transition: all 0.3s ease; 
+  }
+  
+  .navbar3 .rightSide3 .botaoTrilhas3:hover {
+    background-color: white; 
+    color: rgb(27, 29, 30); 
+  }
+
+  .navbar3 .rightSide3 .botaoPerfil {
+    display: flex;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #f88585; 
+    background-color: rgb(27, 29, 30); 
+    color: #fa9f9f;
+    width: 100px;
+    height: 50px;
+    align-content: center;
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    margin-right: -192px;
+    transition: all 0.3s ease; 
+  }
+  
+  .navba3 .rightSide3 .botaoPerfil:hover {
+    background-color: #f08787; 
+    color: black;
+  }
+
+  

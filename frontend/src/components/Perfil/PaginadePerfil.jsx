@@ -4,7 +4,7 @@ import AvatarPerfil from './Avatar';
 import InfoPerfil from './infoPerfil';
 import ButaoPerfil from './ButaoPerfil';
 import axiosInstance2 from './axiosInstance2';
-import Navbar2 from '../Navbar2';
+import Navbar3 from '../Navbar3';
 import './PaginadePerfil.css';
 
 const baseURL = 'http://127.0.0.1:8000/';
@@ -40,7 +40,7 @@ function Perfil() {
 
     return (
         <div>
-            <Navbar2 className="navbar2" />
+            <Navbar3/>
             <div className="containerperfil">
                 <div className="boxperfil">
                     <div className="perfil-content">

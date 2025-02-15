@@ -1,0 +1,18 @@
+.containerT {
+    width: 40rem;
+    background-color: #0f0f0f; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    padding: 1rem;
+    border-radius: 1rem; 
+}
+
+
+.titleT {
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 3rem;
+    color: #e7e7e7; 
+    text-align: center;
+    margin: 0;  
+}

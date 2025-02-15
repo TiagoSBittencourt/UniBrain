@@ -108,38 +108,11 @@ const Quiz = () => {
     if (materiaSelecionada === 0) {
       trilhaNavigateURL = "c2";
     }
+    else if (materiaSelecionada == 1){
+      trilhaNavigateURL = "PE";
+    }
+    navigate("/"+trilhaNavigateURL);
   
-    let idQuestoesFeitas = [];
-    if (nivel === "Ruim") {
-      idQuestoesFeitas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-    }
-    if (nivel === "Médio") {
-      idQuestoesFeitas = [1, 2, 3, 4, 5, 6, 7, 8];
-    }
-    if (nivel === "Bom") {
-      idQuestoesFeitas = [1, 2, 3, 4];
-    }
-  
-    AxiosInstance.post('update-questoes/', {
-      titulo: tituloMateria, // Envia o título para o backend
-      idQuestoesFeitas,      // Envia os IDs das questões feitas
-    })
-      .then((response) => {
-        if (response.status === 200 || response.status === 201) {
-          navigate('/' + trilhaNavigateURL);
-        }
-      })
-      .catch((error) => {
-        console.error('Erro ao iniciar a matéria:', error);
-        alert('Ocorreu um erro ao iniciar a matéria.');
-        if (error.response) {
-          console.log('Erro no response:', error.response.data);
-        } else if (error.request) {
-          console.log('Erro na requisição:', error.request);
-        } else {
-          console.log('Erro desconhecido:', error.message);
-        }
-      });
   };
 
   const Botao = ({ texto, onClick, classe }) => (

@@ -128,10 +128,17 @@
 
 .botaoeditarnome {
   
+<<<<<<< HEAD
   left: 420px; /* Mantém ele fora do retângulo */
   top: 50%;
   margin-left: 10px;
   transform: translateY(0%); /* Centraliza verticalmente */
+=======
+  left: 420px; 
+  top: 50%;
+  margin-left: 10px;
+  transform: translateY(0%); 
+>>>>>>> 2dbd080c9887878a9a63adfea921ffbf8b8e4362
   background-color: #1a73e8;
   color: #ffffff;
   border: none;
@@ -168,4 +175,3 @@
   color: #f1f1f1; 
   transform: scale(1.2);
 }
-

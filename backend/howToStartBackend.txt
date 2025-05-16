@@ -1,0 +1,25 @@
+// First time running
+
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+// After the first time
+
+cd backend
+venv\Scripts\activate
+(might need)
+    python manage.py makemigrations
+    python manage.py migrate
+python manage.py runserver
+
+
+// Como criar superuser (ADM)
+
+python manage.py createsuperuser
+Depois abri a url do backend
+Depois loga com o usuario e seja feliz

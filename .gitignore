@@ -10,6 +10,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 #node_modules
+/frontend/node_modules/
 dist
 dist-ssr
 *.local
@@ -38,8 +39,8 @@ db.sqlite3
 *.log
 
 # Dependências
-venv/
-.env/
+/backend/venv/
+/backend/env/
 *.egg-info
 *.dist-info
 
